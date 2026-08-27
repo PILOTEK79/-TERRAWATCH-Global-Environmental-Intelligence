@@ -472,10 +472,8 @@ main {
     width: 370px;
     height: 170px;
 
-    transform: rotate(-25deg);
-
     animation:
-        orbitRotate 10s linear infinite;
+        orbitOneRotate 10s linear infinite;
 }
 
 
@@ -483,12 +481,10 @@ main {
     width: 400px;
     height: 210px;
 
-    transform: rotate(35deg);
-
     border-color: rgba(34,211,238,.18);
 
     animation:
-        orbitRotate 14s linear infinite reverse;
+        orbitTwoRotate 14s linear infinite reverse;
 }
 
 @keyframes orbitOneRotate {
