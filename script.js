@@ -98,7 +98,8 @@ function createModal(icon, title, text) {
 
     closeModal();
 
-    const modal = document.createElement("div");
+    const modal =
+        document.createElement("div");
 
     modal.id = "terraModal";
 
@@ -145,26 +146,37 @@ function createModal(icon, title, text) {
 
     addModalStyles();
 
+
     const closeButton =
-        modal.querySelector(".terra-modal-close");
+        modal.querySelector(
+            ".terra-modal-close"
+        );
+
 
     closeButton.addEventListener(
         "click",
         closeModal
     );
 
-    modal
-        .querySelector(".terra-modal-backdrop")
-        .addEventListener("click", function(event) {
 
-            if (
-                event.target ===
-                this
-            ) {
+    const backdrop =
+        modal.querySelector(
+            ".terra-modal-backdrop"
+        );
+
+
+    backdrop.addEventListener(
+        "click",
+        function(event) {
+
+            if (event.target === this) {
+
                 closeModal();
+
             }
 
-        });
+        }
+    );
 
 
     document.addEventListener(
@@ -189,7 +201,9 @@ function createModal(icon, title, text) {
 function closeModal() {
 
     const modal =
-        document.getElementById("terraModal");
+        document.getElementById(
+            "terraModal"
+        );
 
     if (!modal) return;
 
@@ -197,7 +211,9 @@ function closeModal() {
 
     setTimeout(() => {
 
-        modal.remove();
+        if (modal) {
+            modal.remove();
+        }
 
     }, 250);
 
@@ -237,6 +253,7 @@ function addModalStyles() {
 
     const style =
         document.createElement("style");
+
 
     style.id =
         "terraModalStyles";
@@ -470,13 +487,15 @@ function addModalStyles() {
 
 
 /* =========================================
-   SMOOTH SCROLL HELPERS
+   SMOOTH SCROLL
 ========================================= */
 
 window.scrollToExplorer = function() {
 
     const section =
-        document.getElementById("explorer");
+        document.getElementById(
+            "explorer"
+        );
 
     if (!section) return;
 
@@ -490,7 +509,9 @@ window.scrollToExplorer = function() {
 window.scrollToMetrics = function() {
 
     const section =
-        document.getElementById("intelligence");
+        document.getElementById(
+            "intelligence"
+        );
 
     if (!section) return;
 
@@ -506,7 +527,9 @@ window.scrollToMetrics = function() {
 ========================================= */
 
 const navbar =
-    document.querySelector(".navbar");
+    document.querySelector(
+        ".navbar"
+    );
 
 
 window.addEventListener(
@@ -533,7 +556,7 @@ window.addEventListener(
 
 
 /* =========================================
-   REVEAL ANIMATIONS
+   CARD REVEAL
 ========================================= */
 
 const revealElements =
@@ -679,14 +702,14 @@ window.addEventListener(
    EARTH MOUSE PARALLAX
 ========================================= */
 
-const earth =
+const earthContainer =
     document.querySelector(
         ".earth-container"
     );
 
 
 if (
-    earth &&
+    earthContainer &&
     window.matchMedia(
         "(pointer:fine)"
     ).matches
@@ -711,7 +734,7 @@ if (
                 ) * 12;
 
 
-            earth.style.transform =
+            earthContainer.style.transform =
                 `translate(${x}px, ${y}px)`;
 
         }
@@ -739,6 +762,7 @@ document
                         "span"
                     );
 
+
                 ripple.style.position =
                     "absolute";
 
@@ -763,6 +787,7 @@ document
                 ripple.style.top =
                     `${event.offsetY}px`;
 
+
                 ripple.animate(
                     [
                         {
@@ -782,13 +807,18 @@ document
                     }
                 );
 
+
                 this.style.position =
                     "relative";
 
                 this.style.overflow =
                     "hidden";
 
-                this.appendChild(ripple);
+
+                this.appendChild(
+                    ripple
+                );
+
 
                 setTimeout(
                     () => ripple.remove(),
@@ -802,6 +832,307 @@ document
 
 
 /* =========================================
+   3D EARTH
+========================================= */
+
+(function init3DEarth() {
+
+    const container =
+        document.getElementById(
+            "earth"
+        );
+
+
+    if (
+        !container ||
+        typeof THREE === "undefined"
+    ) {
+        console.warn(
+            "TerraWatch: Three.js not loaded."
+        );
+        return;
+    }
+
+
+    container.innerHTML = "";
+
+
+    const scene =
+        new THREE.Scene();
+
+
+    const camera =
+        new THREE.PerspectiveCamera(
+            45,
+            1,
+            0.1,
+            100
+        );
+
+
+    camera.position.z = 3.2;
+
+
+    const renderer =
+        new THREE.WebGLRenderer({
+            antialias: true,
+            alpha: true
+        });
+
+
+    renderer.setPixelRatio(
+        Math.min(
+            window.devicePixelRatio,
+            2
+        )
+    );
+
+
+    container.appendChild(
+        renderer.domElement
+    );
+
+
+    /* =====================================
+       EARTH GEOMETRY
+    ===================================== */
+
+    const geometry =
+        new THREE.SphereGeometry(
+            1,
+            64,
+            64
+        );
+
+
+    const textureLoader =
+        new THREE.TextureLoader();
+
+
+    const earthTexture =
+        textureLoader.load(
+            "https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg"
+        );
+
+
+    const material =
+        new THREE.MeshPhongMaterial({
+
+            map: earthTexture,
+
+            shininess: 12
+
+        });
+
+
+    const globe =
+        new THREE.Mesh(
+            geometry,
+            material
+        );
+
+
+    scene.add(globe);
+
+
+    /* =====================================
+       LIGHTING
+    ===================================== */
+
+    const ambient =
+        new THREE.AmbientLight(
+            0xffffff,
+            1.2
+        );
+
+
+    scene.add(
+        ambient
+    );
+
+
+    const sunlight =
+        new THREE.DirectionalLight(
+            0xffffff,
+            2
+        );
+
+
+    sunlight.position.set(
+        5,
+        3,
+        5
+    );
+
+
+    scene.add(
+        sunlight
+    );
+
+
+    /* =====================================
+       ATMOSPHERE
+    ===================================== */
+
+    const atmosphereGeometry =
+        new THREE.SphereGeometry(
+            1.045,
+            64,
+            64
+        );
+
+
+    const atmosphereMaterial =
+        new THREE.MeshBasicMaterial({
+
+            color: 0x22d3ee,
+
+            transparent: true,
+
+            opacity: 0.08,
+
+            side: THREE.BackSide
+
+        });
+
+
+    const atmosphere =
+        new THREE.Mesh(
+            atmosphereGeometry,
+            atmosphereMaterial
+        );
+
+
+    scene.add(
+        atmosphere
+    );
+
+
+    /* =====================================
+       MOUSE INTERACTION
+    ===================================== */
+
+    let targetRotationX = 0;
+
+    let targetRotationY = 0;
+
+
+    document.addEventListener(
+        "mousemove",
+        (event) => {
+
+            targetRotationY =
+                (
+                    event.clientX /
+                    window.innerWidth -
+                    0.5
+                ) * 0.8;
+
+
+            targetRotationX =
+                (
+                    event.clientY /
+                    window.innerHeight -
+                    0.5
+                ) * 0.35;
+
+        }
+    );
+
+
+    /* =====================================
+       RENDER
+    ===================================== */
+
+    function animate() {
+
+        requestAnimationFrame(
+            animate
+        );
+
+
+        globe.rotation.y += 0.0018;
+
+
+        globe.rotation.y +=
+            (
+                targetRotationY -
+                globe.rotation.y
+            ) * 0.002;
+
+
+        globe.rotation.x +=
+            (
+                targetRotationX -
+                globe.rotation.x
+            ) * 0.002;
+
+
+        atmosphere.rotation.y =
+            globe.rotation.y;
+
+
+        renderer.render(
+            scene,
+            camera
+        );
+
+    }
+
+
+    /* =====================================
+       RESPONSIVE SIZE
+    ===================================== */
+
+    function resizeEarth() {
+
+        let size = 280;
+
+
+        if (
+            window.innerWidth <= 450
+        ) {
+
+            size = 210;
+
+        } else if (
+            window.innerWidth <= 750
+        ) {
+
+            size = 240;
+
+        }
+
+
+        renderer.setSize(
+            size,
+            size,
+            false
+        );
+
+
+        camera.aspect = 1;
+
+        camera.updateProjectionMatrix();
+
+    }
+
+
+    window.addEventListener(
+        "resize",
+        resizeEarth
+    );
+
+
+    resizeEarth();
+
+    animate();
+
+
+})();
+
+
+/* =========================================
    CONSOLE
 ========================================= */
 
@@ -810,42 +1141,8 @@ console.log(
     "color:#34d399;font-size:22px;font-weight:bold;"
 );
 
+
 console.log(
     "%cGlobal Environmental Intelligence System Online",
     "color:#22d3ee;font-size:13px;"
 );
-
-/* =========================================
-   EARTH INTERACTION
-========================================= */
-
-const earthVisual =
-    document.querySelector(".earth");
-
-if (earthVisual) {
-
-    earthVisual.addEventListener("mousemove", (event) => {
-
-        const rect =
-            earthVisual.getBoundingClientRect();
-
-        const x =
-            (event.clientX - rect.left) /
-            rect.width - 0.5;
-
-        const y =
-            (event.clientY - rect.top) /
-            rect.height - 0.5;
-
-        earthVisual.style.transform =
-            `translate(${x * 12}px, ${y * 12}px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
-
-    });
-
-    earthVisual.addEventListener("mouseleave", () => {
-
-        earthVisual.style.transform = "";
-
-    });
-
-}
