@@ -62,12 +62,12 @@ body::after {
 
     background-image:
         linear-gradient(
-            rgba(255,255,255,0.025) 1px,
+            rgba(255, 255, 255, 0.025) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255,255,255,0.025) 1px,
+            rgba(255, 255, 255, 0.025) 1px,
             transparent 1px
         );
 
@@ -90,7 +90,6 @@ body::after {
 
 .navbar {
     position: fixed;
-
     top: 0;
     left: 0;
 
@@ -108,11 +107,10 @@ body::after {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
     z-index: 1000;
 }
-
 
 .logo {
     font-size: 24px;
@@ -132,7 +130,6 @@ body::after {
     color: transparent;
 }
 
-
 .nav-status {
     display: flex;
     align-items: center;
@@ -140,17 +137,16 @@ body::after {
 
     padding: 9px 15px;
 
-    border: 1px solid rgba(52,211,153,0.18);
+    border: 1px solid rgba(52, 211, 153, 0.18);
 
     border-radius: 50px;
 
-    background: rgba(16,185,129,0.06);
+    background: rgba(16, 185, 129, 0.06);
 
     color: #94a3b8;
 
     font-size: 13px;
 }
-
 
 .status-dot {
     width: 8px;
@@ -166,7 +162,6 @@ body::after {
     animation: pulse 2s infinite;
 }
 
-
 @keyframes pulse {
 
     0%,
@@ -176,10 +171,9 @@ body::after {
     }
 
     50% {
-        opacity: .4;
-        transform: scale(.7);
+        opacity: 0.4;
+        transform: scale(0.7);
     }
-
 }
 
 
@@ -212,12 +206,10 @@ main {
     position: relative;
 }
 
-
 .hero-content {
     width: 55%;
     max-width: 720px;
 }
-
 
 .eyebrow {
     display: inline-block;
@@ -226,9 +218,9 @@ main {
 
     border-radius: 50px;
 
-    border: 1px solid rgba(52,211,153,.25);
+    border: 1px solid rgba(52, 211, 153, 0.25);
 
-    background: rgba(16,185,129,.08);
+    background: rgba(16, 185, 129, 0.08);
 
     color: #34d399;
 
@@ -240,7 +232,6 @@ main {
     margin-bottom: 25px;
 }
 
-
 .hero h1 {
     font-size: clamp(48px, 6vw, 86px);
 
@@ -250,7 +241,6 @@ main {
 
     margin-bottom: 28px;
 }
-
 
 .hero h1 span {
     display: block;
@@ -266,7 +256,6 @@ main {
 
     color: transparent;
 }
-
 
 .hero p {
     max-width: 650px;
@@ -292,7 +281,6 @@ main {
     flex-wrap: wrap;
 }
 
-
 .hero-buttons button {
     font-family: inherit;
 
@@ -306,9 +294,12 @@ main {
 
     font-weight: 700;
 
-    transition: .3s;
-}
+    transition: 0.3s;
 
+    position: relative;
+
+    overflow: hidden;
+}
 
 .primary-btn {
     border: none;
@@ -322,33 +313,30 @@ main {
     );
 
     box-shadow:
-        0 15px 40px rgba(16,185,129,.18);
+        0 15px 40px rgba(16, 185, 129, 0.18);
 }
-
 
 .primary-btn:hover {
     transform: translateY(-4px);
 
     box-shadow:
-        0 20px 50px rgba(16,185,129,.3);
+        0 20px 50px rgba(16, 185, 129, 0.3);
 }
-
 
 .secondary-btn {
     color: #e2e8f0;
 
-    background: rgba(255,255,255,.04);
+    background: rgba(255, 255, 255, 0.04);
 
-    border: 1px solid rgba(255,255,255,.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
-
 
 .secondary-btn:hover {
     transform: translateY(-4px);
 
     border-color: #34d399;
 
-    background: rgba(52,211,153,.08);
+    background: rgba(52, 211, 153, 0.08);
 }
 
 
@@ -359,31 +347,42 @@ main {
 .earth-container {
     width: 430px;
     height: 430px;
+
     position: relative;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     perspective: 1000px;
-    transition: transform .25s ease-out;
+
+    transition:
+        transform 0.25s ease-out;
 }
 
 .earth {
     width: 280px;
     height: 280px;
-    border-radius: 50%;
+
+    position: relative;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 185px;
+    border-radius: 50%;
 
-    position: relative;
+    overflow: hidden;
+
     z-index: 3;
 
     filter:
-        drop-shadow(0 0 25px rgba(34,211,238,.45))
-        drop-shadow(0 0 70px rgba(52,211,153,.18));
+        drop-shadow(
+            0 0 25px rgba(34, 211, 238, 0.45)
+        )
+        drop-shadow(
+            0 0 70px rgba(52, 211, 153, 0.18)
+        );
 
     animation:
         earthFloat 6s ease-in-out infinite;
@@ -391,33 +390,48 @@ main {
     cursor: grab;
 
     transition:
-        filter .4s ease,
-        transform .2s ease;
+        filter 0.4s ease,
+        transform 0.2s ease;
 }
 
 .earth:hover {
     filter:
-        drop-shadow(0 0 35px rgba(34,211,238,.7))
-        drop-shadow(0 0 90px rgba(52,211,153,.3));
+        drop-shadow(
+            0 0 35px rgba(34, 211, 238, 0.7)
+        )
+        drop-shadow(
+            0 0 90px rgba(52, 211, 153, 0.3)
+        );
 }
 
 .earth:active {
     cursor: grabbing;
 }
 
+.earth canvas {
+    display: block;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+}
+
 .earth::before {
     content: "";
+
     position: absolute;
+
     inset: -18px;
 
     border-radius: 50%;
 
     border:
-        1px solid rgba(34,211,238,.22);
+        1px solid rgba(34, 211, 238, 0.22);
 
     box-shadow:
-        inset 0 0 30px rgba(34,211,238,.12),
-        0 0 35px rgba(34,211,238,.12);
+        inset 0 0 30px rgba(34, 211, 238, 0.12),
+        0 0 35px rgba(34, 211, 238, 0.12);
 
     pointer-events: none;
 }
@@ -426,6 +440,7 @@ main {
     content: "";
 
     position: absolute;
+
     inset: -35px;
 
     border-radius: 50%;
@@ -433,23 +448,25 @@ main {
     background:
         radial-gradient(
             circle,
-            rgba(34,211,238,.12),
+            rgba(34, 211, 238, 0.12),
             transparent 65%
         );
 
     z-index: -1;
+
+    pointer-events: none;
 }
 
 @keyframes earthFloat {
 
-    0%,100% {
-        transform: translateY(0) rotate(0deg);
+    0%,
+    100% {
+        transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-12px) rotate(2deg);
+        transform: translateY(-12px);
     }
-
 }
 
 
@@ -460,13 +477,12 @@ main {
 .orbit {
     position: absolute;
 
-    border: 1px solid rgba(52,211,153,.25);
+    border: 1px solid rgba(52, 211, 153, 0.25);
 
     border-radius: 50%;
 
     pointer-events: none;
 }
-
 
 .orbit-one {
     width: 370px;
@@ -476,12 +492,12 @@ main {
         orbitOneRotate 10s linear infinite;
 }
 
-
 .orbit-two {
     width: 400px;
     height: 210px;
 
-    border-color: rgba(34,211,238,.18);
+    border-color:
+        rgba(34, 211, 238, 0.18);
 
     animation:
         orbitTwoRotate 14s linear infinite reverse;
@@ -496,7 +512,6 @@ main {
     to {
         transform: rotate(335deg);
     }
-
 }
 
 @keyframes orbitTwoRotate {
@@ -508,18 +523,16 @@ main {
     to {
         transform: rotate(395deg);
     }
-
 }
 
+
 /* =========================================
-   SECTION
+   SECTIONS
 ========================================= */
 
 .overview,
 .explorer {
-
     width: 86%;
-
     max-width: 1400px;
 
     margin: auto;
@@ -527,11 +540,9 @@ main {
     padding: 100px 0;
 }
 
-
 .section-heading {
     margin-bottom: 45px;
 }
-
 
 .section-heading span {
     color: #34d399;
@@ -543,19 +554,14 @@ main {
     letter-spacing: 2px;
 }
 
-
 .section-heading h2 {
     margin-top: 12px;
 
-    font-size: clamp(
-        34px,
-        4vw,
-        52px
-    );
+    font-size:
+        clamp(34px, 4vw, 52px);
 
     letter-spacing: -2px;
 }
-
 
 .section-heading p {
     margin-top: 14px;
@@ -563,6 +569,8 @@ main {
     color: #64748b;
 
     font-size: 16px;
+
+    line-height: 1.7;
 }
 
 
@@ -571,7 +579,6 @@ main {
 ========================================= */
 
 .metrics-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -580,9 +587,7 @@ main {
     gap: 20px;
 }
 
-
 .metric-card {
-
     position: relative;
 
     padding: 28px;
@@ -594,23 +599,22 @@ main {
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.07),
-            rgba(255,255,255,.025)
+            rgba(255, 255, 255, 0.07),
+            rgba(255, 255, 255, 0.025)
         );
 
     border:
-        1px solid rgba(255,255,255,.08);
+        1px solid rgba(255, 255, 255, 0.08);
 
     backdrop-filter: blur(18px);
 
-    transition: .35s;
+    transition:
+        0.35s;
 
     overflow: hidden;
 }
 
-
 .metric-card::before {
-
     content: "";
 
     position: absolute;
@@ -625,33 +629,27 @@ main {
 
     filter: blur(60px);
 
-    opacity: .12;
+    opacity: 0.12;
 }
 
-
 .metric-card:hover {
-
     transform:
         translateY(-8px);
 
     border-color:
-        rgba(52,211,153,.35);
+        rgba(52, 211, 153, 0.35);
 
     box-shadow:
-        0 25px 70px rgba(0,0,0,.25);
+        0 25px 70px rgba(0, 0, 0, 0.25);
 }
 
-
 .metric-icon {
-
     font-size: 30px;
 
     margin-bottom: 22px;
 }
 
-
 .metric-card span {
-
     display: block;
 
     color: #94a3b8;
@@ -661,17 +659,13 @@ main {
     margin-bottom: 8px;
 }
 
-
 .metric-card h3 {
-
     font-size: 29px;
 
     margin-bottom: 8px;
 }
 
-
 .metric-card small {
-
     color: #475569;
 
     font-size: 12px;
@@ -683,7 +677,6 @@ main {
 ========================================= */
 
 .explorer-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -692,9 +685,7 @@ main {
     gap: 20px;
 }
 
-
 .explorer-card {
-
     text-align: left;
 
     padding: 30px;
@@ -706,66 +697,59 @@ main {
     font-family: inherit;
 
     background:
-        rgba(255,255,255,.04);
+        rgba(255, 255, 255, 0.04);
 
     border:
-        1px solid rgba(255,255,255,.08);
+        1px solid rgba(255, 255, 255, 0.08);
 
     border-radius: 22px;
 
     cursor: pointer;
 
-    transition: .4s;
+    transition:
+        0.4s;
 
     position: relative;
 
     overflow: hidden;
 }
 
-
 .explorer-card::after {
-
     content: "→";
 
     position: absolute;
 
     right: 25px;
-
     bottom: 20px;
 
     font-size: 24px;
 
     color: #34d399;
 
-    transition: .3s;
+    transition:
+        0.3s;
 }
 
-
 .explorer-card:hover {
-
     transform:
         translateY(-10px);
 
     border-color:
-        rgba(52,211,153,.35);
+        rgba(52, 211, 153, 0.35);
 
     background:
-        rgba(52,211,153,.06);
+        rgba(52, 211, 153, 0.06);
 
     box-shadow:
-        0 25px 60px rgba(0,0,0,.3);
+        0 25px 60px rgba(0, 0, 0, 0.3);
 }
 
-
 .explorer-card:hover::after {
-
     transform:
         translateX(7px);
 }
 
-
 .explorer-card > span {
-
     display: block;
 
     font-size: 42px;
@@ -773,17 +757,13 @@ main {
     margin-bottom: 25px;
 }
 
-
 .explorer-card h3 {
-
     font-size: 21px;
 
     margin-bottom: 10px;
 }
 
-
 .explorer-card p {
-
     color: #64748b;
 
     line-height: 1.6;
@@ -793,13 +773,22 @@ main {
 
 
 /* =========================================
+   FOCUS / ACCESSIBILITY
+========================================= */
+
+button:focus-visible {
+    outline: 2px solid #22d3ee;
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================
    FOOTER
 ========================================= */
 
 footer {
-
     width: 86%;
-
     max-width: 1400px;
 
     margin: auto;
@@ -809,110 +798,93 @@ footer {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     border-top:
-        1px solid rgba(255,255,255,.08);
+        1px solid rgba(255, 255, 255, 0.08);
 
     color: #64748b;
 
     font-size: 13px;
 }
 
-
 footer strong {
-
     color: #34d399;
 }
 
 
 /* =========================================
-   RESPONSIVE
+   RESPONSIVE — TABLET
 ========================================= */
 
 @media (max-width: 1100px) {
 
     .hero {
-
         padding-left: 6%;
         padding-right: 6%;
-
     }
 
     .hero-content {
-
         width: 55%;
-
     }
 
     .earth-container {
-
         width: 350px;
         height: 350px;
-
     }
 
     .earth {
+        width: 240px;
+        height: 240px;
+    }
 
-        font-size: 150px;
-
+    .earth canvas {
+        width: 240px;
+        height: 240px;
     }
 
     .orbit-one {
-
         width: 310px;
         height: 150px;
-
     }
 
     .orbit-two {
-
         width: 340px;
         height: 180px;
-
     }
 
     .metrics-grid {
-
         grid-template-columns:
             repeat(2, 1fr);
-
     }
 
     .explorer-grid {
-
         grid-template-columns:
             repeat(2, 1fr);
-
     }
-
 }
 
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
 
 @media (max-width: 750px) {
 
     .navbar {
-
         padding:
             0 20px;
-
     }
 
     .logo {
-
         font-size: 20px;
-
     }
 
     .nav-status {
-
         display: none;
-
     }
 
     .hero {
-
         min-height: auto;
 
         padding:
@@ -921,89 +893,71 @@ footer strong {
         flex-direction: column;
 
         text-align: center;
-
     }
 
     .hero-content {
-
         width: 100%;
-
     }
 
     .hero h1 {
-
         font-size: 48px;
 
         letter-spacing: -2px;
-
     }
 
     .hero p {
-
         font-size: 16px;
 
         margin-left: auto;
         margin-right: auto;
-
     }
 
     .hero-buttons {
-
         justify-content: center;
-
     }
 
     .earth-container {
-
         width: 300px;
         height: 300px;
-
     }
 
     .earth {
+        width: 240px;
+        height: 240px;
+    }
 
-        font-size: 130px;
-
+    .earth canvas {
+        width: 240px;
+        height: 240px;
     }
 
     .orbit-one {
-
         width: 270px;
         height: 130px;
-
     }
 
     .orbit-two {
-
         width: 290px;
         height: 150px;
-
     }
 
     .overview,
     .explorer {
-
         width: 90%;
 
         padding:
             70px 0;
-
     }
 
     .metrics-grid {
-
         grid-template-columns: 1fr;
-
     }
 
     .explorer-grid {
-
         grid-template-columns: 1fr;
-
     }
 
     footer {
-
         width: 90%;
 
         flex-direction: column;
@@ -1011,237 +965,69 @@ footer strong {
         gap: 12px;
 
         text-align: center;
-
     }
-
 }
 
+
+/* =========================================
+   RESPONSIVE — SMALL PHONE
+========================================= */
 
 @media (max-width: 450px) {
 
     .hero h1 {
-
         font-size: 40px;
-
     }
 
     .eyebrow {
-
         font-size: 10px;
 
         letter-spacing: 1.5px;
-
     }
 
     .earth-container {
-
         width: 250px;
         height: 250px;
-
     }
 
     .earth {
+        width: 210px;
+        height: 210px;
+    }
 
-        font-size: 105px;
-
+    .earth canvas {
+        width: 210px;
+        height: 210px;
     }
 
     .orbit-one {
-
         width: 220px;
         height: 110px;
-
     }
 
     .orbit-two {
-
         width: 240px;
         height: 125px;
-
     }
 
+    .hero-buttons button {
+        width: 100%;
+    }
 }
 
+
 /* =========================================
-   TERRAWATCH 3D EARTH
+   REDUCED MOTION
 ========================================= */
 
-(function init3DEarth() {
+@media (prefers-reduced-motion: reduce) {
 
-    const container = document.getElementById("earth");
-
-    if (!container || typeof THREE === "undefined") return;
-
-    container.innerHTML = "";
-
-    const scene = new THREE.Scene();
-
-    const camera = new THREE.PerspectiveCamera(
-        45,
-        1,
-        0.1,
-        100
-    );
-
-    camera.position.z = 3.2;
-
-    const renderer = new THREE.WebGLRenderer({
-        antialias: true,
-        alpha: true
-    });
-
-    renderer.setPixelRatio(
-        Math.min(window.devicePixelRatio, 2)
-    );
-
-    renderer.setSize(280, 280);
-
-    container.appendChild(renderer.domElement);
-
-    /* EARTH */
-
-    const geometry =
-        new THREE.SphereGeometry(1, 64, 64);
-
-    const textureLoader =
-        new THREE.TextureLoader();
-
-    const earthTexture =
-        textureLoader.load(
-            "https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg"
-        );
-
-    const material =
-        new THREE.MeshPhongMaterial({
-            map: earthTexture,
-            shininess: 12
-        });
-
-    const globe =
-        new THREE.Mesh(
-            geometry,
-            material
-        );
-
-    scene.add(globe);
-
-    /* LIGHT */
-
-    const ambient =
-        new THREE.AmbientLight(
-            0xffffff,
-            1.2
-        );
-
-    scene.add(ambient);
-
-    const sunlight =
-        new THREE.DirectionalLight(
-            0xffffff,
-            2
-        );
-
-    sunlight.position.set(5, 3, 5);
-
-    scene.add(sunlight);
-
-    /* ATMOSPHERE */
-
-    const atmosphereGeometry =
-        new THREE.SphereGeometry(
-            1.045,
-            64,
-            64
-        );
-
-    const atmosphereMaterial =
-        new THREE.MeshBasicMaterial({
-            color: 0x22d3ee,
-            transparent: true,
-            opacity: 0.08,
-            side: THREE.BackSide
-        });
-
-    const atmosphere =
-        new THREE.Mesh(
-            atmosphereGeometry,
-            atmosphereMaterial
-        );
-
-    scene.add(atmosphere);
-
-    /* MOUSE ROTATION */
-
-    let targetX = 0;
-    let targetY = 0;
-
-    document.addEventListener(
-        "mousemove",
-        (event) => {
-
-            targetY =
-                (event.clientX /
-                    window.innerWidth - 0.5) * 0.8;
-
-            targetX =
-                (event.clientY /
-                    window.innerHeight - 0.5) * 0.5;
-
-        }
-    );
-
-    /* ANIMATION */
-
-    function animate() {
-
-        requestAnimationFrame(animate);
-
-        globe.rotation.y += 0.0018;
-
-        globe.rotation.y +=
-            (targetY - globe.rotation.y) * 0.002;
-
-        globe.rotation.x +=
-            (targetX - globe.rotation.x) * 0.002;
-
-        atmosphere.rotation.y =
-            globe.rotation.y;
-
-        renderer.render(
-            scene,
-            camera
-        );
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
-
-    animate();
-
-    /* RESPONSIVE */
-
-    function resizeEarth() {
-
-        const size =
-            window.innerWidth <= 450
-                ? 210
-                : window.innerWidth <= 750
-                ? 240
-                : 280;
-
-        renderer.setSize(
-            size,
-            size
-        );
-
-        camera.aspect = 1;
-
-        camera.updateProjectionMatrix();
-
-    }
-
-    window.addEventListener(
-        "resize",
-        resizeEarth
-    );
-
-    resizeEarth();
-
-})();
+}
