@@ -15,10 +15,17 @@
         content="TerraWatch — Global Environmental Intelligence platform."
     >
 
+    <meta
+        name="theme-color"
+        content="#020617"
+    >
+
     <title>TerraWatch | Global Environmental Intelligence</title>
 
 
-    <!-- GOOGLE FONT -->
+    <!-- =========================================
+         GOOGLE FONT
+    ========================================== -->
 
     <link
         rel="preconnect"
@@ -34,6 +41,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
+    >
+
+
+    <!-- =========================================
+         TERRAWATCH CSS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
     >
 
 </head>
@@ -57,7 +74,9 @@
 
         <span class="status-dot"></span>
 
-        Global Monitoring Active
+        <span>
+            Global Monitoring Active
+        </span>
 
     </div>
 
@@ -73,7 +92,7 @@
 
 
 <!-- =========================================
-     HERO
+     HERO SECTION
 ========================================= -->
 
 <section class="hero">
@@ -112,20 +131,28 @@
 
         <div class="hero-buttons">
 
+
             <button
+                type="button"
                 class="primary-btn"
                 onclick="scrollToExplorer()"
             >
+
                 🌍 Explore Earth
+
             </button>
 
 
             <button
+                type="button"
                 class="secondary-btn"
                 onclick="scrollToMetrics()"
             >
+
                 📊 View Intelligence
+
             </button>
+
 
         </div>
 
@@ -135,19 +162,24 @@
 
 
     <!-- =====================================
-         3D EARTH
+         INTERACTIVE 3D EARTH
     ====================================== -->
 
-    <div class="earth-container">
+    <div
+        class="earth-container"
+        aria-label="Interactive 3D Earth"
+    >
 
         <div class="orbit orbit-one"></div>
 
         <div class="orbit orbit-two"></div>
 
+
         <div
             class="earth"
             id="earth"
         ></div>
+
 
     </div>
 
@@ -168,6 +200,7 @@
 
     <div class="section-heading">
 
+
         <span>
             PLANETARY OVERVIEW
         </span>
@@ -183,6 +216,7 @@
             through an interactive intelligence dashboard.
         </p>
 
+
     </div>
 
 
@@ -190,7 +224,9 @@
     <div class="metrics-grid">
 
 
-        <!-- TEMPERATURE -->
+        <!-- =================================
+             TEMPERATURE
+        ================================== -->
 
         <div class="metric-card">
 
@@ -214,7 +250,9 @@
 
 
 
-        <!-- CO2 -->
+        <!-- =================================
+             CO2
+        ================================== -->
 
         <div class="metric-card">
 
@@ -238,7 +276,9 @@
 
 
 
-        <!-- FORESTS -->
+        <!-- =================================
+             FORESTS
+        ================================== -->
 
         <div class="metric-card">
 
@@ -262,7 +302,9 @@
 
 
 
-        <!-- OCEANS -->
+        <!-- =================================
+             OCEANS
+        ================================== -->
 
         <div class="metric-card">
 
@@ -293,7 +335,7 @@
 
 
 <!-- =========================================
-     EXPLORER
+     ENVIRONMENTAL EXPLORER
 ========================================= -->
 
 <section
@@ -303,6 +345,7 @@
 
 
     <div class="section-heading">
+
 
         <span>
             ENVIRONMENTAL EXPLORER
@@ -319,6 +362,7 @@
             exploring the intelligence behind our planet.
         </p>
 
+
     </div>
 
 
@@ -326,9 +370,12 @@
     <div class="explorer-grid">
 
 
-        <!-- CLIMATE -->
+        <!-- =================================
+             CLIMATE
+        ================================== -->
 
         <button
+            type="button"
             class="explorer-card"
             onclick="openModule('climate')"
         >
@@ -350,9 +397,12 @@
 
 
 
-        <!-- OCEANS -->
+        <!-- =================================
+             OCEANS
+        ================================== -->
 
         <button
+            type="button"
             class="explorer-card"
             onclick="openModule('oceans')"
         >
@@ -374,9 +424,12 @@
 
 
 
-        <!-- FORESTS -->
+        <!-- =================================
+             FORESTS
+        ================================== -->
 
         <button
+            type="button"
             class="explorer-card"
             onclick="openModule('forests')"
         >
@@ -398,9 +451,12 @@
 
 
 
-        <!-- AIR -->
+        <!-- =================================
+             AIR QUALITY
+        ================================== -->
 
         <button
+            type="button"
             class="explorer-card"
             onclick="openModule('air')"
         >
@@ -422,9 +478,12 @@
 
 
 
-        <!-- WILDLIFE -->
+        <!-- =================================
+             BIODIVERSITY
+        ================================== -->
 
         <button
+            type="button"
             class="explorer-card"
             onclick="openModule('wildlife')"
         >
@@ -446,9 +505,12 @@
 
 
 
-        <!-- NATURAL EVENTS -->
+        <!-- =================================
+             NATURAL EVENTS
+        ================================== -->
 
         <button
+            type="button"
             class="explorer-card"
             onclick="openModule('disasters')"
         >
@@ -470,9 +532,12 @@
 
 
 
-        <!-- ENERGY -->
+        <!-- =================================
+             ENERGY
+        ================================== -->
 
         <button
+            type="button"
             class="explorer-card"
             onclick="openModule('energy')"
         >
@@ -494,9 +559,12 @@
 
 
 
-        <!-- SATELLITE -->
+        <!-- =================================
+             EARTH OBSERVATION
+        ================================== -->
 
         <button
+            type="button"
             class="explorer-card"
             onclick="openModule('satellite')"
         >
@@ -521,7 +589,6 @@
 
 
 </section>
-
 
 
 </main>
@@ -568,11 +635,14 @@
 ></script>
 
 
+
 <!-- =========================================
      TERRAWATCH JAVASCRIPT
 ========================================= -->
 
-<script src="script.js"></script>
+<script
+    src="script.js"
+></script>
 
 
 </body>
