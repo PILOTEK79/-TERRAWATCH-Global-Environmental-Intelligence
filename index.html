@@ -36,13 +36,6 @@
         rel="stylesheet"
     >
 
-    <!-- TERRAWATCH CSS -->
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
 </head>
 
 
@@ -141,20 +134,20 @@
 
 
 
-    <!-- EARTH VISUAL -->
+    <!-- =====================================
+         3D EARTH
+    ====================================== -->
 
     <div class="earth-container">
-
 
         <div class="orbit orbit-one"></div>
 
         <div class="orbit orbit-two"></div>
 
-
-        <div class="earth">
-            🌍
-        </div>
-
+        <div
+            class="earth"
+            id="earth"
+        ></div>
 
     </div>
 
@@ -453,7 +446,7 @@
 
 
 
-        <!-- DISASTERS -->
+        <!-- NATURAL EVENTS -->
 
         <button
             class="explorer-card"
@@ -567,7 +560,16 @@
 
 
 <!-- =========================================
-     JAVASCRIPT
+     THREE.JS
+========================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"
+></script>
+
+
+<!-- =========================================
+     TERRAWATCH JAVASCRIPT
 ========================================= -->
 
 <script src="script.js"></script>
