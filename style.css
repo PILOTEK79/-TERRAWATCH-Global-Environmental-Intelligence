@@ -491,21 +491,29 @@ main {
         orbitRotate 14s linear infinite reverse;
 }
 
-
-@keyframes orbitRotate {
+@keyframes orbitOneRotate {
 
     from {
-        transform:
-            rotate(0deg);
+        transform: rotate(-25deg);
     }
 
     to {
-        transform:
-            rotate(360deg);
+        transform: rotate(335deg);
     }
 
 }
 
+@keyframes orbitTwoRotate {
+
+    from {
+        transform: rotate(35deg);
+    }
+
+    to {
+        transform: rotate(395deg);
+    }
+
+}
 
 /* =========================================
    SECTION
