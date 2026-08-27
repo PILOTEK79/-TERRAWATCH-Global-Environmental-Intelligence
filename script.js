@@ -814,3 +814,38 @@ console.log(
     "%cGlobal Environmental Intelligence System Online",
     "color:#22d3ee;font-size:13px;"
 );
+
+/* =========================================
+   EARTH INTERACTION
+========================================= */
+
+const earthVisual =
+    document.querySelector(".earth");
+
+if (earthVisual) {
+
+    earthVisual.addEventListener("mousemove", (event) => {
+
+        const rect =
+            earthVisual.getBoundingClientRect();
+
+        const x =
+            (event.clientX - rect.left) /
+            rect.width - 0.5;
+
+        const y =
+            (event.clientY - rect.top) /
+            rect.height - 0.5;
+
+        earthVisual.style.transform =
+            `translate(${x * 12}px, ${y * 12}px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
+
+    });
+
+    earthVisual.addEventListener("mouseleave", () => {
+
+        earthVisual.style.transform = "";
+
+    });
+
+}
