@@ -1061,3 +1061,187 @@ footer strong {
     }
 
 }
+
+/* =========================================
+   TERRAWATCH 3D EARTH
+========================================= */
+
+(function init3DEarth() {
+
+    const container = document.getElementById("earth");
+
+    if (!container || typeof THREE === "undefined") return;
+
+    container.innerHTML = "";
+
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.PerspectiveCamera(
+        45,
+        1,
+        0.1,
+        100
+    );
+
+    camera.position.z = 3.2;
+
+    const renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true
+    });
+
+    renderer.setPixelRatio(
+        Math.min(window.devicePixelRatio, 2)
+    );
+
+    renderer.setSize(280, 280);
+
+    container.appendChild(renderer.domElement);
+
+    /* EARTH */
+
+    const geometry =
+        new THREE.SphereGeometry(1, 64, 64);
+
+    const textureLoader =
+        new THREE.TextureLoader();
+
+    const earthTexture =
+        textureLoader.load(
+            "https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg"
+        );
+
+    const material =
+        new THREE.MeshPhongMaterial({
+            map: earthTexture,
+            shininess: 12
+        });
+
+    const globe =
+        new THREE.Mesh(
+            geometry,
+            material
+        );
+
+    scene.add(globe);
+
+    /* LIGHT */
+
+    const ambient =
+        new THREE.AmbientLight(
+            0xffffff,
+            1.2
+        );
+
+    scene.add(ambient);
+
+    const sunlight =
+        new THREE.DirectionalLight(
+            0xffffff,
+            2
+        );
+
+    sunlight.position.set(5, 3, 5);
+
+    scene.add(sunlight);
+
+    /* ATMOSPHERE */
+
+    const atmosphereGeometry =
+        new THREE.SphereGeometry(
+            1.045,
+            64,
+            64
+        );
+
+    const atmosphereMaterial =
+        new THREE.MeshBasicMaterial({
+            color: 0x22d3ee,
+            transparent: true,
+            opacity: 0.08,
+            side: THREE.BackSide
+        });
+
+    const atmosphere =
+        new THREE.Mesh(
+            atmosphereGeometry,
+            atmosphereMaterial
+        );
+
+    scene.add(atmosphere);
+
+    /* MOUSE ROTATION */
+
+    let targetX = 0;
+    let targetY = 0;
+
+    document.addEventListener(
+        "mousemove",
+        (event) => {
+
+            targetY =
+                (event.clientX /
+                    window.innerWidth - 0.5) * 0.8;
+
+            targetX =
+                (event.clientY /
+                    window.innerHeight - 0.5) * 0.5;
+
+        }
+    );
+
+    /* ANIMATION */
+
+    function animate() {
+
+        requestAnimationFrame(animate);
+
+        globe.rotation.y += 0.0018;
+
+        globe.rotation.y +=
+            (targetY - globe.rotation.y) * 0.002;
+
+        globe.rotation.x +=
+            (targetX - globe.rotation.x) * 0.002;
+
+        atmosphere.rotation.y =
+            globe.rotation.y;
+
+        renderer.render(
+            scene,
+            camera
+        );
+    }
+
+    animate();
+
+    /* RESPONSIVE */
+
+    function resizeEarth() {
+
+        const size =
+            window.innerWidth <= 450
+                ? 210
+                : window.innerWidth <= 750
+                ? 240
+                : 280;
+
+        renderer.setSize(
+            size,
+            size
+        );
+
+        camera.aspect = 1;
+
+        camera.updateProjectionMatrix();
+
+    }
+
+    window.addEventListener(
+        "resize",
+        resizeEarth
+    );
+
+    resizeEarth();
+
+})();
