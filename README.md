@@ -1,10 +1,12 @@
 <div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=0:020617,50:063B35,100:34D399&text=TERRAWATCH&fontColor=ffffff&fontSize=60&animation=fadeIn" width="100%">
+
 # 🌍 TERRAWATCH
 
 ### GLOBAL ENVIRONMENTAL INTELLIGENCE
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=800&size=25&duration=3000&pause=900&color=34D399&center=true&vCenter=true&width=800&lines=Understand+Our+Planet.;Explore+Environmental+Intelligence.;Visualize+Planetary+Change.;Protect+Its+Future." alt="TerraWatch Animated Heading">
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=800&size=25&duration=3000&pause=900&color=34D399&center=true&vCenter=true&width=850&lines=Understand+Our+Planet.;Explore+Environmental+Intelligence.;Visualize+Planetary+Change.;Protect+Its+Future." alt="TerraWatch Animated Heading">
 
 <br>
 
@@ -14,11 +16,11 @@
 
 <br>
 
-<a href="https://pilotek79.github.io/">
+<a href="https://pilottek79.github.io/">
 <img src="https://img.shields.io/badge/🌍%20LIVE%20DEMO-34D399?style=for-the-badge&labelColor=020617" alt="Live Demo">
 </a>
 
-<a href="https://pilotek79.github.io/-TERRAWATCH-Global-Environmental-Intelligence/">
+<a href="https://github.com/pilottek79/-TERRAWATCH-Global-Environmental-Intelligence">
 <img src="https://img.shields.io/badge/💻%20SOURCE%20CODE-22D3EE?style=for-the-badge&labelColor=020617" alt="Source Code">
 </a>
 
@@ -32,7 +34,7 @@
 
 <br><br>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,50:063B35,100:34D399&height=140&section=header" width="100%">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,50:063B35,100:34D399&height=120&section=header" width="100%">
 
 </div>
 
@@ -42,40 +44,45 @@
 
 **TerraWatch** is a modern environmental intelligence platform concept designed to make planetary information more visual, interactive and accessible.
 
-The project combines immersive web design, interactive visualization and environmental intelligence concepts into a single digital experience.
+The project combines **immersive web design, interactive visualization, environmental indicators and planetary intelligence concepts** into a single digital experience.
 
 > 🌍 **Understand Our Planet. Protect Its Future.**
 
+TerraWatch is built around one simple idea:
+
+**Environmental information should be easier to explore, understand and visualize.**
+
 ---
 
-# ✨ FEATURES
+# ✨ CORE FEATURES
 
 <table>
 <tr>
 <td width="50%">
 
-### 🌍 Interactive Earth
+## 🌍 Interactive Earth
 
-- Realistic 3D Earth
-- Three.js rendering
-- WebGL graphics
-- Atmospheric glow
-- Continuous rotation
-- Mouse interaction
-- Responsive rendering
+- 🌎 Realistic 3D Earth
+- ⚡ Three.js rendering
+- 🖥️ WebGL graphics
+- ✨ Atmospheric glow
+- 🔄 Continuous rotation
+- 🖱️ Mouse interaction
+- 📱 Responsive rendering
 
 </td>
 
 <td width="50%">
 
-### 📊 Environmental Dashboard
+## 📊 Environmental Dashboard
 
 - 🌡️ Temperature indicator
 - 🏭 CO₂ indicator
 - 🌊 Ocean indicator
 - 🌳 Forest indicator
-- Live-style environmental interface
-- Animated data presentation
+- 📡 Live-style interface
+- 📈 Environmental trends
+- 📊 Visual intelligence
 
 </td>
 </tr>
@@ -83,25 +90,27 @@ The project combines immersive web design, interactive visualization and environ
 <tr>
 <td>
 
-### 🔥 Natural Events
+## 🔥 Natural Events
 
-- Wildfire activity
-- Storm systems
-- Volcanic activity
-- Flood risk
-- Environmental event monitoring
+- 🔥 Wildfire activity
+- 🌪️ Storm systems
+- 🌋 Volcanic activity
+- 🌊 Flood risk
+- ⚠️ Event monitoring interface
+- 📡 Environmental event concepts
 
 </td>
 
 <td>
 
-### 🛰️ Earth Observation
+## 🛰️ Earth Observation
 
-- Satellite observation concept
-- Environmental monitoring
-- Planetary systems
-- Future satellite-data integration
-- Regional environmental intelligence
+- 🛰️ Satellite observation concept
+- 🌍 Environmental monitoring
+- 📡 Earth-data architecture
+- 🗺️ Regional intelligence
+- 🔭 Planetary observation
+- 🤖 Future AI integration
 
 </td>
 </tr>
@@ -109,26 +118,27 @@ The project combines immersive web design, interactive visualization and environ
 <tr>
 <td>
 
-### 📈 Data Visualization
+## 📈 Data Visualization
 
-- Animated environmental charts
-- Trend visualization
-- Interactive indicators
-- Regional comparisons
-- Visual intelligence
+- 📈 Animated charts
+- 🌡️ Temperature trends
+- 🏭 CO₂ trends
+- 📊 Environmental indicators
+- 🗺️ Regional comparisons
+- ✨ Interactive presentation
 
 </td>
 
 <td>
 
-### 📱 Responsive Experience
+## 📱 Responsive Experience
 
-- Desktop optimized
-- Tablet optimized
-- Mobile optimized
-- Responsive layouts
-- Touch-friendly interface
-- Adaptive 3D rendering
+- 🖥️ Desktop optimized
+- 💻 Laptop optimized
+- 📱 Mobile optimized
+- 📲 Tablet optimized
+- 👆 Touch-friendly interface
+- ⚡ Adaptive layouts
 
 </td>
 </tr>
@@ -140,7 +150,7 @@ The project combines immersive web design, interactive visualization and environ
 
 TerraWatch brings major planetary systems into one unified interface.
 
-```text
+~~~text
                          🌍 EARTH
                             │
         ┌───────────────────┼───────────────────┐
@@ -163,38 +173,32 @@ TerraWatch brings major planetary systems into one unified interface.
                             │
                             ▼
                        🤖 FUTURE AI
-
-🌡️ PLANETARY INDICATORS
-
-TerraWatch currently presents a live-style environmental overview.
+~~~
 
 ---
 
-## 🌡️ PLANETARY INDICATORS
+# 🌡️ PLANETARY INDICATORS
 
-TerraWatch currently presents a live-style environmental overview designed
-to visualize major planetary systems through a simple intelligence dashboard.
+TerraWatch currently presents a **live-style environmental overview** designed to visualize major planetary systems through a simple intelligence dashboard.
 
 | Indicator | Current Display |
-|---|---:|
-| 🌡️ Global Temperature | **+1.1°C** |
-| 🏭 Atmospheric CO₂ | **420+ ppm** |
-| 🌊 Ocean Coverage | **71%** |
-| 🌳 Forest Coverage | **31%** |
+|:---|---:|
+| 🌡️ **Global Temperature** | **+1.1°C** |
+| 🏭 **Atmospheric CO₂** | **420+ ppm** |
+| 🌊 **Ocean Coverage** | **71%** |
+| 🌳 **Forest Coverage** | **31%** |
 
-> ⚠️ **Data Notice:** Current values are demonstration/interface values and
-> should not be interpreted as verified real-time scientific measurements.
+> ⚠️ **Data Notice:** Current values are demonstration/interface values and should not be interpreted as verified real-time scientific measurements.
 
 ---
 
-## 📈 ENVIRONMENTAL TRENDS
+# 📈 ENVIRONMENTAL TRENDS
 
-TerraWatch uses animated visualizations to make environmental trends easier
-to explore and understand.
+TerraWatch uses animated visualizations to make environmental trends easier to explore and understand.
 
-### 🌡️ Temperature Trend
+## 🌡️ Temperature Trend
 
-```text
+~~~text
 Temperature
    │
    │                    ╭──╮
@@ -203,178 +207,228 @@ Temperature
    │    ╭────╯
    │────╯
    └──────────────────────────────
-     Jan Feb Mar Apr May Jun Jul
+     Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+~~~
 
-⸻
+## 🏭 CO₂ Trend
 
-🔐 DATA DISCLAIMER
+~~~text
+CO₂
+ │
+ │                         ╭────
+ │                    ╭────╯
+ │               ╭────╯
+ │          ╭────╯
+ │     ╭────╯
+ │─────╯
+ └──────────────────────────────
+   Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+~~~
 
-TerraWatch V2 is currently a frontend visualization and portfolio project.
+> 📊 The charts represent the project's **visualization concept** and are not presented as verified scientific datasets.
 
-Environmental values displayed by the current interface may be static
-demonstration values.
+---
 
-They should not be considered:
+# 🔥 NATURAL EVENTS
 
-* Official scientific measurements
-* Government environmental data
-* Emergency alerts
-* Scientific forecasts
-* Real-time monitoring
-* Professional environmental advice
+TerraWatch includes a natural-events interface designed around environmental monitoring concepts.
 
-Future versions may connect TerraWatch to verified scientific datasets and
-environmental APIs.
+| Event | Status | Monitoring Concept |
+|:---|:---:|:---|
+| 🔥 **Wildfire Activity** | **HIGH** | Elevated activity detected |
+| 🌪️ **Storm Systems** | **MEDIUM** | Multiple systems monitored |
+| 🌋 **Volcanic Activity** | **WATCH** | Monitoring active regions |
+| 🌊 **Flood Risk** | **WATCH** | Regional monitoring active |
 
-⸻
-TerraWatch is built around the idea that planetary information should be
-understandable, explorable and increasingly intelligent.
+> ⚠️ **Data Notice:** Event statuses are demonstration/interface values and should not be interpreted as verified real-time emergency information.
 
-⸻
+---
 
-Technology
+# 🛰️ EARTH OBSERVATION
 
-Purpose
+Earth-observation technology provides a powerful foundation for understanding environmental change.
 
-HTML5
+TerraWatch uses this concept as part of its environmental intelligence architecture.
 
-Application structure
+~~~text
+                    🛰️ SATELLITES
+                         │
+                         ▼
+                    📡 EARTH DATA
+                         │
+              ┌──────────┼──────────┐
+              │          │          │
+              ▼          ▼          ▼
+           🌊 OCEAN    🌳 LAND    ☁️ ATMOSPHERE
+              │          │          │
+              └──────────┼──────────┘
+                         │
+                         ▼
+                    📊 ANALYTICS
+                         │
+                         ▼
+                    🤖 INTELLIGENCE
+                         │
+                         ▼
+                     💡 INSIGHTS
+~~~
 
-CSS3
+---
 
-UI, animations and responsive design
+# 🗺️ ENVIRONMENTAL REGIONS
 
-JavaScript
+TerraWatch organizes environmental intelligence around major geographic regions.
 
-Application logic and interaction
+| 🌍 Region | Environmental Focus |
+|:---|:---|
+| 🌎 **North America** | Climate • Air • Forests |
+| 🌎 **South America** | Forests • Biodiversity • Climate |
+| 🇪🇺 **Europe** | Air • Energy • Climate |
+| 🌍 **Africa** | Climate • Biodiversity • Natural Events |
+| 🌏 **Asia** | Climate • Air • Energy |
+| 🌊 **Oceania** | Oceans • Biodiversity • Climate |
 
-Three.js
+The regional structure provides a foundation for future **geospatial intelligence and location-based environmental analysis**.
 
-3D Earth visualization
+---
 
-WebGL
+# 🔎 ENVIRONMENTAL EXPLORER
 
-Hardware-accelerated graphics
+TerraWatch is structured around an exploration-first experience.
 
-Google Fonts
+Users can explore environmental domains including:
 
-Interface typography
-
-GitHub Pages
-
-Deployment
-
-—————
-
-🗺️ ROADMAP
-
-╔══════════════════════════════════════════╗
-║            TERRAWATCH ROADMAP            ║
-╚══════════════════════════════════════════╝
-
-V1.0 ───────────────────────── COMPLETE
-
-✓ TerraWatch concept
-✓ Environmental landing experience
-✓ Planetary indicators
-✓ Environmental modules
-✓ Responsive foundation
-✓ GitHub Pages deployment
-
-
-V2.0 ───────────────────────── COMPLETE
-
-✓ Interactive 3D Earth
-✓ Three.js integration
-✓ WebGL rendering
-✓ Environmental dashboard
-✓ Temperature indicator
-✓ CO₂ indicator
-✓ Ocean indicator
-✓ Forest indicator
-✓ Animated charts
-✓ Natural-events panel
-✓ Earth-observation panel
-✓ Environmental regions
-✓ Search/exploration interface
-✓ Mobile experience
-✓ UI animations
-
-
-V3.0 ───────────────────────── PLANNED
-
-○ Verified environmental APIs
-○ Live measurements
-○ Historical datasets
-○ Dynamic environmental data
-○ Interactive global map
-○ Environmental alerts
-○ Regional comparisons
-
-
-V4.0 ───────────────────────── PLANNED
-
-○ Satellite imagery
-○ Earth-observation datasets
-○ Environmental change detection
-○ Geographic intelligence
-○ Global environmental monitoring
-
-
-V5.0 ───────────────────────── FUTURE
-
-○ AI environmental analysis
-○ Intelligent environmental search
-○ Automated insights
-○ Anomaly detection
-○ Predictive models
-○ Environmental forecasting
-○ Automated reports
-
-
-🎯 PROJECT OBJECTIVES
-
-🌍 ACCESSIBLE ENVIRONMENTAL INFORMATION
-
-Make environmental concepts easier to understand through interactive
-visualization.
-
-📊 DATA INTO EXPERIENCE
-
-Transform environmental information into intuitive visual experiences.
-
+~~~text
+🌡️ CLIMATE
+🌊 OCEANS
+🌳 FORESTS
+🌬️ AIR QUALITY
+🐘 BIODIVERSITY
+🔥 NATURAL EVENTS
+⚡ ENERGY
 🛰️ EARTH OBSERVATION
+🗺️ ENVIRONMENTAL REGIONS
+~~~
 
-Demonstrate how satellite technology can contribute to planetary monitoring.
+Each environmental module provides a focused entry point into a specific planetary system.
 
-🤖 AI-READY FOUNDATION
+---
 
-Create a foundation for future AI-powered environmental analysis.
+# ⚡ TECHNOLOGY
 
-💻 MODERN WEB TECHNOLOGY
+<div align="center">
 
-Combine frontend engineering, WebGL and interactive visualization
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+<img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white">
+<img src="https://img.shields.io/badge/WebGL-990000?style=for-the-badge&logo=webgl&logoColor=white">
 
+</div>
 
-🤝 CONTRIBUTIONS
+### 🧩 TECHNOLOGY ROLE
 
-Future contributions may focus on:
+| Technology | Purpose |
+|:---|:---|
+| **HTML5** | Application structure |
+| **CSS3** | Visual system and responsive design |
+| **JavaScript** | Interactions and application logic |
+| **Three.js** | 3D Earth visualization |
+| **WebGL** | Hardware-accelerated graphics |
+| **GitHub Pages** | Web deployment |
 
-* 🎨 UI/UX improvements
-* ♿ Accessibility
-* ⚡ Performance
-* 📊 Data visualization
-* 🌍 Geographic systems
-* 🛰️ Earth observation
-* 🔌 API integrations
-* 🤖 AI/ML systems
-* 📱 Mobile optimization
-* 🌱 Environmental datasets
+---
 
-⸻
+# 🎨 DESIGN SYSTEM
 
-📜 LICENSE
+TerraWatch follows a futuristic environmental intelligence aesthetic.
 
-This project is licensed under the MIT License.
+### Visual Principles
 
-See the LICENSE file for details.
+- 🌑 Dark planetary interface
+- 🟢 Environmental green accents
+- 🔵 Atmospheric cyan highlights
+- 🧊 Glassmorphism panels
+- ✨ Soft environmental glow
+- 📐 Grid-based background
+- 🌌 Space-inspired atmosphere
+- 🎞️ Smooth transitions
+- 📱 Responsive layouts
+
+### Design Philosophy
+
+> **Technology should make complex information feel simple.**
+
+TerraWatch therefore focuses on **visual hierarchy, interactive elements and concise information presentation** rather than overwhelming users with raw data.
+
+---
+
+# 🚀 PROJECT STATUS
+
+<div align="center">
+
+### 🟢 ACTIVE DEVELOPMENT
+
+**TerraWatch v2.0**
+
+</div>
+
+The current version focuses on creating the **visual and interactive foundation** of the platform.
+
+The architecture is designed so that real environmental datasets, APIs, maps and AI capabilities can be integrated in future versions.
+
+---
+
+# 📌 PROJECT STRUCTURE
+
+~~~text
+TERRAWATCH/
+│
+├── 📄 index.html
+├── 🎨 style.css
+├── ⚙️ script.js
+├── 📜 README.md
+└── 📄 LICENSE
+~~~
+
+---
+
+# 🌍 PROJECT VISION
+
+TerraWatch aims to evolve from a **visual environmental interface** into a broader environmental intelligence platform.
+
+~~~text
+        🌍 PLANET
+           │
+           ▼
+      📡 DATA SOURCES
+           │
+           ▼
+       📊 ANALYTICS
+           │
+           ▼
+       🤖 AI SYSTEMS
+           │
+           ▼
+      💡 INTELLIGENCE
+           │
+           ▼
+       🌎 HUMAN
+       UNDERSTANDING
+~~~
+
+> **Understand the planet. Visualize the change. Build for the future.**
+
+---
+
+<div align="center">
+
+## 🌍 TERRAWATCH
+
+### **Understand Our Planet. Protect Its Future.**
+
+<br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:34D399,50:063B35,100:020617&height=100&section=footer" width="100%">
+
+</div>
