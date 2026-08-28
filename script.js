@@ -1,9 +1,9 @@
-"use strict";
-
 /* =========================================
-   TERRAWATCH
+   TERRAWATCH V2
    GLOBAL ENVIRONMENTAL INTELLIGENCE
 ========================================= */
+
+"use strict";
 
 
 /* =========================================
@@ -15,82 +15,102 @@ const modules = {
     climate: {
         icon: "🌡️",
         title: "Climate Intelligence",
-        text: "Climate intelligence focuses on long-term changes in temperature, precipitation, atmospheric conditions and climate patterns across the planet."
+        text:
+            "Explore temperature patterns, atmospheric conditions and long-term climate signals."
     },
 
     oceans: {
         icon: "🌊",
         title: "Ocean Intelligence",
-        text: "Ocean intelligence helps us understand sea-level change, ocean temperatures, marine ecosystems and the relationship between oceans and Earth's climate."
+        text:
+            "Explore ocean conditions, marine systems and changes affecting planetary waters."
     },
 
     forests: {
         icon: "🌳",
         title: "Forest Intelligence",
-        text: "Forest intelligence focuses on forest coverage, deforestation, ecosystem health, biodiversity and the role forests play in the global carbon cycle."
+        text:
+            "Explore forest coverage, ecosystems, biodiversity and deforestation signals."
     },
 
     air: {
         icon: "🌬️",
         title: "Air Quality Intelligence",
-        text: "Air-quality intelligence examines atmospheric pollutants and environmental conditions that influence the quality of the air people and ecosystems depend on."
+        text:
+            "Explore atmospheric conditions and environmental pollution indicators."
     },
 
     wildlife: {
         icon: "🐘",
         title: "Biodiversity Intelligence",
-        text: "Biodiversity intelligence explores ecosystems, species diversity, habitats and the environmental pressures affecting wildlife."
+        text:
+            "Explore ecosystems, wildlife and biodiversity systems across the planet."
     },
 
     disasters: {
-        icon: "🌋",
+        icon: "🔥",
         title: "Natural Events Intelligence",
-        text: "Environmental monitoring can help identify and visualize events such as wildfires, storms, floods and volcanic activity."
+        text:
+            "Monitor environmental events including wildfires, storms, floods and volcanic activity."
     },
 
     energy: {
         icon: "⚡",
         title: "Energy Intelligence",
-        text: "Energy intelligence examines how societies produce and consume energy, including the growing role of renewable energy systems."
+        text:
+            "Explore renewable energy, electricity and global energy systems."
     },
 
     satellite: {
         icon: "🛰️",
         title: "Earth Observation",
-        text: "Earth-observation satellites provide valuable information about Earth's surface, atmosphere, oceans and environmental changes."
+        text:
+            "Explore how satellite observation can monitor Earth's surface, atmosphere and environmental change."
     }
 
 };
 
 
 /* =========================================
-   OPEN MODULE
+   SCROLL FUNCTIONS
 ========================================= */
 
-window.openModule = function(moduleName) {
+window.scrollToDashboard = function () {
 
-    const module = modules[moduleName];
+    document
+        .getElementById("dashboard")
+        ?.scrollIntoView({
+            behavior: "smooth"
+        });
 
-    if (!module) return;
+};
 
-    createModal(
-        module.icon,
-        module.title,
-        module.text
-    );
+
+window.scrollToExplorer = function () {
+
+    document
+        .getElementById("explorer")
+        ?.scrollIntoView({
+            behavior: "smooth"
+        });
 
 };
 
 
 /* =========================================
-   MODAL
+   MODULE MODAL
 ========================================= */
 
-function createModal(icon, title, text) {
+window.openModule = function (name) {
+
+    const module = modules[name];
+
+    if (!module) return;
 
     closeModal();
 
-    const modal = document.createElement("div");
+    const modal =
+        document.createElement("div");
 
     modal.id = "terraModal";
 
@@ -108,19 +128,24 @@ function createModal(icon, title, text) {
                 </button>
 
                 <div class="terra-modal-icon">
-                    ${icon}
+                    ${module.icon}
                 </div>
 
-                <h2>${title}</h2>
+                <div class="modal-label">
+                    TERRAWATCH INTELLIGENCE
+                </div>
 
-                <p>${text}</p>
+                <h2>
+                    ${module.title}
+                </h2>
 
-                <div class="terra-modal-status">
+                <p>
+                    ${module.text}
+                </p>
 
+                <div class="modal-status">
                     <span></span>
-
-                    TerraWatch Intelligence Module
-
+                    Intelligence module ready
                 </div>
 
             </div>
@@ -133,82 +158,65 @@ function createModal(icon, title, text) {
 
     addModalStyles();
 
-    const closeButton =
-        modal.querySelector(".terra-modal-close");
-
-    closeButton.addEventListener(
-        "click",
-        closeModal
-    );
-
-    const backdrop =
-        modal.querySelector(".terra-modal-backdrop");
-
-    backdrop.addEventListener(
-        "click",
-        event => {
-
-            if (event.target === backdrop) {
-
-                closeModal();
-
-            }
-
-        }
-    );
-
-    document.addEventListener(
-        "keydown",
-        handleEscape
-    );
-
     requestAnimationFrame(() => {
-
         modal.classList.add("show");
-
     });
 
-}
+    modal
+        .querySelector(".terra-modal-close")
+        .addEventListener(
+            "click",
+            closeModal
+        );
 
+    modal
+        .querySelector(".terra-modal-backdrop")
+        .addEventListener(
+            "click",
+            event => {
 
-/* =========================================
-   CLOSE MODAL
-========================================= */
+                if (
+                    event.target.classList.contains(
+                        "terra-modal-backdrop"
+                    )
+                ) {
+                    closeModal();
+                }
+
+            }
+        );
+
+};
+
 
 function closeModal() {
 
     const modal =
-        document.getElementById("terraModal");
+        document.getElementById(
+            "terraModal"
+        );
 
     if (!modal) return;
 
     modal.classList.remove("show");
 
     setTimeout(() => {
-
-        if (modal) {
-            modal.remove();
-        }
-
+        modal.remove();
     }, 250);
 
-    document.removeEventListener(
-        "keydown",
-        handleEscape
-    );
-
 }
 
 
-function handleEscape(event) {
+document.addEventListener(
+    "keydown",
+    event => {
 
-    if (event.key === "Escape") {
-
-        closeModal();
+        if (event.key === "Escape") {
+            closeModal();
+        }
 
     }
-
-}
+);
 
 
 /* =========================================
@@ -228,8 +236,7 @@ function addModalStyles() {
     const style =
         document.createElement("style");
 
-    style.id =
-        "terraModalStyles";
+    style.id = "terraModalStyles";
 
     style.textContent = `
 
@@ -237,8 +244,11 @@ function addModalStyles() {
             position: fixed;
             inset: 0;
             z-index: 9999;
+
             opacity: 0;
-            transition: opacity .25s ease;
+
+            transition:
+                opacity .25s ease;
         }
 
         #terraModal.show {
@@ -248,19 +258,28 @@ function addModalStyles() {
         .terra-modal-backdrop {
             width: 100%;
             height: 100%;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             padding: 25px;
-            background: rgba(0,0,0,.72);
-            backdrop-filter: blur(14px);
+
+            background:
+                rgba(0,0,0,.72);
+
+            backdrop-filter:
+                blur(15px);
         }
 
         .terra-modal {
             position: relative;
-            width: min(600px, 100%);
-            padding: 45px;
-            border-radius: 28px;
+
+            width: min(580px,100%);
+
+            padding: 42px;
+
+            border-radius: 26px;
 
             background:
                 linear-gradient(
@@ -282,10 +301,11 @@ function addModalStyles() {
                 scale(.96);
 
             transition:
-                transform .35s ease;
+                transform .3s ease;
         }
 
-        #terraModal.show .terra-modal {
+        #terraModal.show
+        .terra-modal {
             transform:
                 translateY(0)
                 scale(1);
@@ -293,8 +313,9 @@ function addModalStyles() {
 
         .terra-modal-close {
             position: absolute;
-            top: 18px;
-            right: 20px;
+
+            top: 17px;
+            right: 18px;
 
             width: 40px;
             height: 40px;
@@ -313,51 +334,55 @@ function addModalStyles() {
             font-size: 25px;
 
             cursor: pointer;
-
-            transition: .25s;
-        }
-
-        .terra-modal-close:hover {
-            background:
-                rgba(239,68,68,.2);
-
-            transform:
-                rotate(90deg);
         }
 
         .terra-modal-icon {
             font-size: 55px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
+        }
+
+        .modal-label {
+            color: #34d399;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 10px;
         }
 
         .terra-modal h2 {
-            font-size: 32px;
-            margin-bottom: 18px;
+            font-size: 30px;
+            margin-bottom: 16px;
         }
 
         .terra-modal p {
             color: #94a3b8;
+
+            font-size: 15px;
+
             line-height: 1.8;
-            font-size: 16px;
         }
 
-        .terra-modal-status {
+        .modal-status {
             display: flex;
             align-items: center;
-            gap: 9px;
+            gap: 8px;
 
-            margin-top: 30px;
-            padding-top: 20px;
+            margin-top: 25px;
+            padding-top: 18px;
 
             border-top:
                 1px solid
                 rgba(255,255,255,.08);
 
             color: #64748b;
-            font-size: 12px;
+
+            font-size: 11px;
         }
 
-        .terra-modal-status span {
+        .modal-status span {
             width: 7px;
             height: 7px;
 
@@ -373,11 +398,11 @@ function addModalStyles() {
         @media(max-width:600px) {
 
             .terra-modal {
-                padding: 32px 25px;
+                padding: 32px 24px;
             }
 
             .terra-modal h2 {
-                font-size: 26px;
+                font-size: 25px;
             }
 
         }
@@ -390,115 +415,72 @@ function addModalStyles() {
 
 
 /* =========================================
-   SCROLL HELPERS
+   REGION EXPLORER
 ========================================= */
 
-window.scrollToExplorer = function() {
+window.selectRegion = function (region) {
 
-    const section =
-        document.getElementById("explorer");
+    const output =
+        document.getElementById(
+            "regionOutput"
+        );
 
-    if (!section) return;
+    if (!output) return;
 
-    section.scrollIntoView({
-        behavior: "smooth"
-    });
-
-};
-
-
-window.scrollToMetrics = function() {
-
-    const section =
-        document.getElementById("intelligence");
-
-    if (!section) return;
-
-    section.scrollIntoView({
-        behavior: "smooth"
-    });
+    output.innerHTML = `
+        <strong style="color:#34d399">
+            ${region}
+        </strong>
+        <br>
+        Environmental intelligence systems available:
+        climate, atmosphere, forests, oceans and biodiversity.
+    `;
 
 };
 
 
 /* =========================================
-   NAVBAR EFFECT
+   SEARCH
 ========================================= */
 
-const navbar =
-    document.querySelector(".navbar");
+const searchInput =
+    document.getElementById(
+        "moduleSearch"
+    );
 
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        if (!navbar) return;
-
-        navbar.style.background =
-            window.scrollY > 40
-                ? "rgba(2, 6, 23, 0.92)"
-                : "rgba(2, 6, 23, 0.72)";
-
-    },
-    { passive: true }
-);
-
-
-/* =========================================
-   CARD REVEAL
-========================================= */
-
-const revealElements =
+const explorerCards =
     document.querySelectorAll(
-        ".metric-card, .explorer-card"
+        ".explorer-card"
     );
 
 
-if ("IntersectionObserver" in window) {
+if (searchInput) {
 
-    const observer =
-        new IntersectionObserver(
-            entries => {
+    searchInput.addEventListener(
+        "input",
+        () => {
 
-                entries.forEach(entry => {
+            const query =
+                searchInput.value
+                    .toLowerCase()
+                    .trim();
 
-                    if (!entry.isIntersecting)
-                        return;
+            explorerCards.forEach(card => {
 
-                    entry.target.style.opacity = "1";
+                const searchableText =
+                    card.dataset.search
+                        .toLowerCase();
 
-                    entry.target.style.transform =
-                        "translateY(0)";
+                const visible =
+                    searchableText
+                        .includes(query);
 
-                    observer.unobserve(
-                        entry.target
-                    );
+                card.classList.toggle(
+                    "hidden",
+                    !visible
+                );
 
-                });
-
-            },
-            {
-                threshold: 0.12
-            }
-        );
-
-
-    revealElements.forEach(
-        (element, index) => {
-
-            element.style.opacity = "0";
-
-            element.style.transform =
-                "translateY(35px)";
-
-            element.style.transition =
-                "opacity .7s ease, transform .7s ease";
-
-            element.style.transitionDelay =
-                `${(index % 4) * 0.08}s`;
-
-            observer.observe(element);
+            });
 
         }
     );
@@ -507,144 +489,342 @@ if ("IntersectionObserver" in window) {
 
 
 /* =========================================
-   HERO ENTRANCE
+   CHART ENGINE
 ========================================= */
 
-window.addEventListener(
-    "DOMContentLoaded",
-    () => {
+function drawChart(
+    canvasId,
+    data,
+    labels
+) {
 
-        const hero =
-            document.querySelector(
-                ".hero-content"
+    const canvas =
+        document.getElementById(
+            canvasId
+        );
+
+    if (!canvas) return;
+
+    const ctx =
+        canvas.getContext("2d");
+
+    function render() {
+
+        const rect =
+            canvas.getBoundingClientRect();
+
+        const dpr =
+            window.devicePixelRatio || 1;
+
+        canvas.width =
+            rect.width * dpr;
+
+        canvas.height =
+            rect.height * dpr;
+
+        ctx.setTransform(
+            dpr,
+            0,
+            0,
+            dpr,
+            0,
+            0
+        );
+
+        const width = rect.width;
+        const height = rect.height;
+
+        ctx.clearRect(
+            0,
+            0,
+            width,
+            height
+        );
+
+
+        /* GRID */
+
+        ctx.strokeStyle =
+            "rgba(255,255,255,.07)";
+
+        ctx.lineWidth = 1;
+
+        for (
+            let i = 1;
+            i < 5;
+            i++
+        ) {
+
+            const y =
+                20 +
+                (
+                    height - 45
+                ) *
+                i / 5;
+
+            ctx.beginPath();
+
+            ctx.moveTo(
+                0,
+                y
             );
 
-        const earth =
-            document.querySelector(
-                ".earth-container"
+            ctx.lineTo(
+                width,
+                y
             );
 
-
-        if (hero) {
-
-            hero.animate(
-                [
-                    {
-                        opacity: 0,
-                        transform:
-                            "translateY(35px)"
-                    },
-                    {
-                        opacity: 1,
-                        transform:
-                            "translateY(0)"
-                    }
-                ],
-                {
-                    duration: 1000,
-                    easing:
-                        "cubic-bezier(.16,1,.3,1)",
-                    fill: "both"
-                }
-            );
+            ctx.stroke();
 
         }
 
 
-        if (earth) {
+        /* LABELS */
 
-            earth.animate(
-                [
-                    {
-                        opacity: 0,
-                        transform:
-                            "scale(.75)"
-                    },
-                    {
-                        opacity: 1,
-                        transform:
-                            "scale(1)"
-                    }
-                ],
-                {
-                    duration: 1200,
-                    delay: 250,
-                    easing:
-                        "cubic-bezier(.16,1,.3,1)",
-                    fill: "both"
-                }
-            );
+        ctx.fillStyle =
+            "#64748b";
 
-        }
+        ctx.font =
+            "10px Inter, sans-serif";
 
-    }
-);
+        labels.forEach(
+            (label, index) => {
 
+                const x =
+                    index *
+                    (
+                        width /
+                        (labels.length - 1)
+                    );
 
-/* =========================================
-   BUTTON RIPPLE
-========================================= */
-
-document
-    .querySelectorAll(
-        ".primary-btn, .secondary-btn"
-    )
-    .forEach(button => {
-
-        button.addEventListener(
-            "click",
-            function(event) {
-
-                const ripple =
-                    document.createElement("span");
-
-                ripple.style.position = "absolute";
-                ripple.style.width = "10px";
-                ripple.style.height = "10px";
-                ripple.style.borderRadius = "50%";
-                ripple.style.background =
-                    "rgba(255,255,255,.45)";
-                ripple.style.pointerEvents = "none";
-
-                ripple.style.left =
-                    `${event.offsetX}px`;
-
-                ripple.style.top =
-                    `${event.offsetY}px`;
-
-                this.style.position = "relative";
-                this.style.overflow = "hidden";
-
-                this.appendChild(ripple);
-
-                ripple.animate(
-                    [
-                        {
-                            transform:
-                                "translate(-50%,-50%) scale(1)",
-                            opacity: .7
-                        },
-                        {
-                            transform:
-                                "translate(-50%,-50%) scale(15)",
-                            opacity: 0
-                        }
-                    ],
-                    {
-                        duration: 600,
-                        easing: "ease-out"
-                    }
-                );
-
-                setTimeout(
-                    () => ripple.remove(),
-                    650
+                ctx.fillText(
+                    label,
+                    Math.max(
+                        0,
+                        x - 10
+                    ),
+                    height - 10
                 );
 
             }
         );
 
-    });
+
+        /* LINE */
+
+        const max =
+            Math.max(...data);
+
+        const min =
+            Math.min(...data);
+
+        const range =
+            max - min || 1;
+
+        ctx.beginPath();
+
+        data.forEach(
+            (value, index) => {
+
+                const x =
+                    index *
+                    (
+                        width /
+                        (data.length - 1)
+                    );
+
+                const y =
+                    20 +
+                    (
+                        height - 55
+                    ) *
+                    (
+                        1 -
+                        (
+                            value - min
+                        ) / range
+                    );
+
+                if (index === 0) {
+                    ctx.moveTo(x,y);
+                } else {
+                    ctx.lineTo(x,y);
+                }
+
+            }
+        );
+
+        ctx.strokeStyle =
+            "#34d399";
+
+        ctx.lineWidth = 3;
+
+        ctx.lineJoin = "round";
+        ctx.lineCap = "round";
+
+        ctx.stroke();
+
+
+        /* AREA */
+
+        const gradient =
+            ctx.createLinearGradient(
+                0,
+                0,
+                0,
+                height
+            );
+
+        gradient.addColorStop(
+            0,
+            "rgba(52,211,153,.18)"
+        );
+
+        gradient.addColorStop(
+            1,
+            "rgba(52,211,153,0)"
+        );
+
+        ctx.lineTo(
+            width,
+            height - 25
+        );
+
+        ctx.lineTo(
+            0,
+            height - 25
+        );
+
+        ctx.closePath();
+
+        ctx.fillStyle =
+            gradient;
+
+        ctx.fill();
+
+
+        /* POINTS */
+
+        data.forEach(
+            (value,index) => {
+
+                const x =
+                    index *
+                    (
+                        width /
+                        (data.length - 1)
+                    );
+
+                const y =
+                    20 +
+                    (
+                        height - 55
+                    ) *
+                    (
+                        1 -
+                        (
+                            value - min
+                        ) / range
+                    );
+
+                ctx.beginPath();
+
+                ctx.arc(
+                    x,
+                    y,
+                    3.5,
+                    0,
+                    Math.PI * 2
+                );
+
+                ctx.fillStyle =
+                    "#22d3ee";
+
+                ctx.fill();
+
+            }
+        );
+
+    }
+
+    render();
+
+    window.addEventListener(
+        "resize",
+        render
+    );
+
+}
+
+
+/* =========================================
+   CHART DATA
+========================================= */
+
+drawChart(
+    "temperatureChart",
+    [
+        0.62,
+        0.71,
+        0.68,
+        0.82,
+        0.91,
+        0.96,
+        1.02,
+        1.08,
+        1.01,
+        1.07,
+        1.10,
+        1.12
+    ],
+    [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+    ]
+);
+
+
+drawChart(
+    "co2Chart",
+    [
+        414,
+        415,
+        416,
+        417,
+        418,
+        419,
+        419,
+        420,
+        421,
+        421,
+        422,
+        423
+    ],
+    [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+    ]
+);
 
 
 /* =========================================
@@ -654,20 +834,18 @@ document
 (function init3DEarth() {
 
     const container =
-        document.getElementById("earth");
-
+        document.getElementById(
+            "earth"
+        );
 
     if (
         !container ||
         typeof THREE === "undefined"
     ) {
-
         console.warn(
             "TerraWatch: Three.js unavailable."
         );
-
         return;
-
     }
 
 
@@ -682,7 +860,6 @@ document
             0.1,
             100
         );
-
 
     camera.position.z = 3.2;
 
@@ -702,16 +879,12 @@ document
     );
 
 
-    container.innerHTML = "";
-
     container.appendChild(
         renderer.domElement
     );
 
 
-    /* =====================================
-       EARTH
-    ===================================== */
+    /* EARTH */
 
     const geometry =
         new THREE.SphereGeometry(
@@ -721,34 +894,19 @@ document
         );
 
 
-    const textureLoader =
+    const loader =
         new THREE.TextureLoader();
 
 
-    const earthTexture =
-        textureLoader.load(
-            "https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg",
-            () => {
-
-                console.log(
-                    "TerraWatch: Earth texture loaded."
-                );
-
-            },
-            undefined,
-            () => {
-
-                console.warn(
-                    "TerraWatch: Earth texture failed."
-                );
-
-            }
+    const texture =
+        loader.load(
+            "https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg"
         );
 
 
     const material =
         new THREE.MeshPhongMaterial({
-            map: earthTexture,
+            map: texture,
             shininess: 15
         });
 
@@ -763,24 +921,22 @@ document
     scene.add(globe);
 
 
-    /* =====================================
-       LIGHT
-    ===================================== */
+    /* LIGHT */
 
-    scene.add(
+    const ambient =
         new THREE.AmbientLight(
             0xffffff,
             1.25
-        )
-    );
+        );
+
+    scene.add(ambient);
 
 
     const sunlight =
         new THREE.DirectionalLight(
             0xffffff,
-            2
+            2.2
         );
-
 
     sunlight.position.set(
         5,
@@ -788,88 +944,57 @@ document
         5
     );
 
-
     scene.add(sunlight);
 
 
-    /* =====================================
-       ATMOSPHERE
-    ===================================== */
-
-    const atmosphereGeometry =
-        new THREE.SphereGeometry(
-            1.045,
-            64,
-            64
-        );
-
-
-    const atmosphereMaterial =
-        new THREE.MeshBasicMaterial({
-
-            color: 0x22d3ee,
-
-            transparent: true,
-
-            opacity: 0.08,
-
-            side: THREE.BackSide
-
-        });
-
+    /* ATMOSPHERE */
 
     const atmosphere =
         new THREE.Mesh(
-            atmosphereGeometry,
-            atmosphereMaterial
+            new THREE.SphereGeometry(
+                1.045,
+                64,
+                64
+            ),
+            new THREE.MeshBasicMaterial({
+                color: 0x22d3ee,
+                transparent: true,
+                opacity: .09,
+                side: THREE.BackSide
+            })
         );
-
 
     scene.add(atmosphere);
 
 
-    /* =====================================
-       MOUSE ROTATION
-    ===================================== */
+    /* INTERACTION */
 
-    let mouseX = 0;
-    let mouseY = 0;
+    let targetX = 0;
+    let targetY = 0;
 
+    document.addEventListener(
+        "mousemove",
+        event => {
 
-    if (
-        window.matchMedia(
-            "(pointer:fine)"
-        ).matches
-    ) {
+            targetY =
+                (
+                    event.clientX /
+                    window.innerWidth -
+                    .5
+                ) * .6;
 
-        document.addEventListener(
-            "mousemove",
-            event => {
+            targetX =
+                (
+                    event.clientY /
+                    window.innerHeight -
+                    .5
+                ) * .3;
 
-                mouseX =
-                    (
-                        event.clientX /
-                        window.innerWidth -
-                        0.5
-                    ) * 0.5;
-
-
-                mouseY =
-                    (
-                        event.clientY /
-                        window.innerHeight -
-                        0.5
-                    ) * 0.25;
-
-            }
-        );
-
-    }
+        }
+    );
 
 
-    /* =====================================
-       ANIMATION
-    ===================================== */
+    /* ANIMATION */
 
     function animate() {
 
@@ -877,20 +1002,22 @@ document
             animate
         );
 
+        globe.rotation.y += .0018;
 
-        globe.rotation.y += 0.002;
-
+        globe.rotation.y +=
+            (
+                targetY -
+                globe.rotation.y
+            ) * .002;
 
         globe.rotation.x +=
             (
-                mouseY -
+                targetX -
                 globe.rotation.x
-            ) * 0.01;
-
+            ) * .002;
 
         atmosphere.rotation.y =
             globe.rotation.y;
-
 
         renderer.render(
             scene,
@@ -900,39 +1027,22 @@ document
     }
 
 
-    /* =====================================
-       RESPONSIVE
-    ===================================== */
+    function resize() {
 
-    function resizeEarth() {
+        const width =
+            container.clientWidth;
 
-        let size = 280;
-
-
-        if (
-            window.innerWidth <= 450
-        ) {
-
-            size = 210;
-
-        }
-        else if (
-            window.innerWidth <= 750
-        ) {
-
-            size = 240;
-
-        }
-
+        const height =
+            container.clientHeight;
 
         renderer.setSize(
-            size,
-            size,
+            width,
+            height,
             false
         );
 
-
-        camera.aspect = 1;
+        camera.aspect =
+            width / height;
 
         camera.updateProjectionMatrix();
 
@@ -941,11 +1051,10 @@ document
 
     window.addEventListener(
         "resize",
-        resizeEarth
+        resize
     );
 
-
-    resizeEarth();
+    resize();
 
     animate();
 
@@ -953,15 +1062,40 @@ document
 
 
 /* =========================================
-   SYSTEM ONLINE
+   NAVBAR
+========================================= */
+
+const navbar =
+    document.querySelector(
+        ".navbar"
+    );
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (!navbar) return;
+
+        navbar.style.background =
+            window.scrollY > 40
+                ? "rgba(2,6,23,.94)"
+                : "rgba(2,6,23,.78)";
+
+    },
+    { passive: true }
+);
+
+
+/* =========================================
+   CONSOLE
 ========================================= */
 
 console.log(
-    "%c🌍 TerraWatch",
-    "color:#34d399;font-size:22px;font-weight:bold;"
+    "%c🌍 TerraWatch V2",
+    "color:#34d399;font-size:22px;font-weight:800;"
 );
 
 console.log(
-    "%cGlobal Environmental Intelligence System Online",
+    "%cEnvironmental Intelligence Dashboard Online",
     "color:#22d3ee;font-size:13px;"
 );
