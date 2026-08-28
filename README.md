@@ -167,3 +167,214 @@ TerraWatch brings major planetary systems into one unified interface.
 🌡️ PLANETARY INDICATORS
 
 TerraWatch currently presents a live-style environmental overview.
+
+---
+
+## 🌡️ PLANETARY INDICATORS
+
+TerraWatch currently presents a live-style environmental overview designed
+to visualize major planetary systems through a simple intelligence dashboard.
+
+| Indicator | Current Display |
+|---|---:|
+| 🌡️ Global Temperature | **+1.1°C** |
+| 🏭 Atmospheric CO₂ | **420+ ppm** |
+| 🌊 Ocean Coverage | **71%** |
+| 🌳 Forest Coverage | **31%** |
+
+> ⚠️ **Data Notice:** Current values are demonstration/interface values and
+> should not be interpreted as verified real-time scientific measurements.
+
+---
+
+## 📈 ENVIRONMENTAL TRENDS
+
+TerraWatch uses animated visualizations to make environmental trends easier
+to explore and understand.
+
+### 🌡️ Temperature Trend
+
+```text
+Temperature
+   │
+   │                    ╭──╮
+   │              ╭─────╯  ╰──╮
+   │         ╭────╯            ╰──
+   │    ╭────╯
+   │────╯
+   └──────────────────────────────
+     Jan Feb Mar Apr May Jun Jul
+
+⸻
+
+🔐 DATA DISCLAIMER
+
+TerraWatch V2 is currently a frontend visualization and portfolio project.
+
+Environmental values displayed by the current interface may be static
+demonstration values.
+
+They should not be considered:
+
+* Official scientific measurements
+* Government environmental data
+* Emergency alerts
+* Scientific forecasts
+* Real-time monitoring
+* Professional environmental advice
+
+Future versions may connect TerraWatch to verified scientific datasets and
+environmental APIs.
+
+⸻
+TerraWatch is built around the idea that planetary information should be
+understandable, explorable and increasingly intelligent.
+
+⸻
+
+Technology
+
+Purpose
+
+HTML5
+
+Application structure
+
+CSS3
+
+UI, animations and responsive design
+
+JavaScript
+
+Application logic and interaction
+
+Three.js
+
+3D Earth visualization
+
+WebGL
+
+Hardware-accelerated graphics
+
+Google Fonts
+
+Interface typography
+
+GitHub Pages
+
+Deployment
+
+—————
+
+🗺️ ROADMAP
+
+╔══════════════════════════════════════════╗
+║            TERRAWATCH ROADMAP            ║
+╚══════════════════════════════════════════╝
+
+V1.0 ───────────────────────── COMPLETE
+
+✓ TerraWatch concept
+✓ Environmental landing experience
+✓ Planetary indicators
+✓ Environmental modules
+✓ Responsive foundation
+✓ GitHub Pages deployment
+
+
+V2.0 ───────────────────────── COMPLETE
+
+✓ Interactive 3D Earth
+✓ Three.js integration
+✓ WebGL rendering
+✓ Environmental dashboard
+✓ Temperature indicator
+✓ CO₂ indicator
+✓ Ocean indicator
+✓ Forest indicator
+✓ Animated charts
+✓ Natural-events panel
+✓ Earth-observation panel
+✓ Environmental regions
+✓ Search/exploration interface
+✓ Mobile experience
+✓ UI animations
+
+
+V3.0 ───────────────────────── PLANNED
+
+○ Verified environmental APIs
+○ Live measurements
+○ Historical datasets
+○ Dynamic environmental data
+○ Interactive global map
+○ Environmental alerts
+○ Regional comparisons
+
+
+V4.0 ───────────────────────── PLANNED
+
+○ Satellite imagery
+○ Earth-observation datasets
+○ Environmental change detection
+○ Geographic intelligence
+○ Global environmental monitoring
+
+
+V5.0 ───────────────────────── FUTURE
+
+○ AI environmental analysis
+○ Intelligent environmental search
+○ Automated insights
+○ Anomaly detection
+○ Predictive models
+○ Environmental forecasting
+○ Automated reports
+
+
+🎯 PROJECT OBJECTIVES
+
+🌍 ACCESSIBLE ENVIRONMENTAL INFORMATION
+
+Make environmental concepts easier to understand through interactive
+visualization.
+
+📊 DATA INTO EXPERIENCE
+
+Transform environmental information into intuitive visual experiences.
+
+🛰️ EARTH OBSERVATION
+
+Demonstrate how satellite technology can contribute to planetary monitoring.
+
+🤖 AI-READY FOUNDATION
+
+Create a foundation for future AI-powered environmental analysis.
+
+💻 MODERN WEB TECHNOLOGY
+
+Combine frontend engineering, WebGL and interactive visualization
+
+
+🤝 CONTRIBUTIONS
+
+Future contributions may focus on:
+
+* 🎨 UI/UX improvements
+* ♿ Accessibility
+* ⚡ Performance
+* 📊 Data visualization
+* 🌍 Geographic systems
+* 🛰️ Earth observation
+* 🔌 API integrations
+* 🤖 AI/ML systems
+* 📱 Mobile optimization
+* 🌱 Environmental datasets
+
+⸻
+
+📜 LICENSE
+
+This project is licensed under the MIT License.
+
+See the LICENSE file for details.
