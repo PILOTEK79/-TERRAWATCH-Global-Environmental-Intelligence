@@ -758,3 +758,177 @@ console.log(
     "%cGlobal Environmental Intelligence System Online",
     "color:#22d3ee;font-size:13px;"
 );
+
+/* =========================================
+   TERRAWATCH — ENVIRONMENTAL REGION POPUPS
+========================================= */
+
+const regionData = {
+    "North America": {
+        icon: "🌎",
+        title: "North America",
+        text: "Environmental intelligence across climate systems, air quality, forests, oceans and major ecological regions."
+    },
+
+    "South America": {
+        icon: "🌎",
+        title: "South America",
+        text: "Monitor rainforest systems, biodiversity, climate conditions, water resources and ecosystem change."
+    },
+
+    "Europe": {
+        icon: "🌍",
+        title: "Europe",
+        text: "Explore climate patterns, air quality, energy systems, forests and environmental conditions across Europe."
+    },
+
+    "Asia": {
+        icon: "🌏",
+        title: "Asia",
+        text: "Explore atmospheric conditions, climate change, forests, oceans, energy systems and rapidly changing environments."
+    },
+
+    "Africa": {
+        icon: "🌍",
+        title: "Africa",
+        text: "Understand environmental conditions across deserts, forests, wildlife habitats, climate systems and water resources."
+    },
+
+    "Oceania": {
+        icon: "🌏",
+        title: "Oceania",
+        text: "Explore ocean systems, coral ecosystems, climate conditions, biodiversity and environmental change across Oceania."
+    }
+};
+
+
+/* =========================================
+   REGION MODAL
+========================================= */
+
+function openRegion(regionName) {
+
+    const data = regionData[regionName];
+
+    if (!data) {
+        console.warn("TerraWatch: Region not found:", regionName);
+        return;
+    }
+
+    closeRegion();
+
+    const modal = document.createElement("div");
+
+    modal.id = "regionModal";
+
+    modal.innerHTML = `
+        <div class="region-modal-backdrop">
+
+            <div class="region-modal">
+
+                <button
+                    class="region-close"
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+                <div class="region-modal-icon">
+                    ${data.icon}
+                </div>
+
+                <div class="region-label">
+                    ENVIRONMENTAL REGION
+                </div>
+
+                <h2>
+                    ${data.title}
+                </h2>
+
+                <p>
+                    ${data.text}
+                </p>
+
+                <div class="region-status">
+                    <span></span>
+                    TerraWatch Regional Intelligence
+                </div>
+
+            </div>
+
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    requestAnimationFrame(() => {
+        modal.classList.add("active");
+    });
+
+    modal
+        .querySelector(".region-close")
+        .addEventListener("click", closeRegion);
+
+    modal
+        .querySelector(".region-modal-backdrop")
+        .addEventListener("click", function(event) {
+
+            if (event.target === this) {
+                closeRegion();
+            }
+
+        });
+}
+
+
+/* =========================================
+   CLOSE REGION
+========================================= */
+
+function closeRegion() {
+
+    const modal =
+        document.getElementById("regionModal");
+
+    if (!modal) return;
+
+    modal.classList.remove("active");
+
+    setTimeout(() => {
+        modal.remove();
+    }, 250);
+}
+
+
+/* =========================================
+   ESCAPE KEY
+========================================= */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closeRegion();
+    }
+
+});
+
+
+/* =========================================
+   REGION CARD CLICK
+========================================= */
+
+document.addEventListener("click", function(event) {
+
+    const card =
+        event.target.closest(".region-card");
+
+    if (!card) return;
+
+    const title =
+        card.querySelector("h3");
+
+    if (!title) return;
+
+    openRegion(title.textContent.trim());
+
+});
