@@ -1,538 +1,765 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta
-        name="description"
-        content="TerraWatch — Global Environmental Intelligence Dashboard."
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
     >
 
-    <meta name="theme-color" content="#020617">
+    <meta
+        name="description"
+        content="TerraWatch — Global Environmental Intelligence platform."
+    >
 
-    <title>TerraWatch | Environmental Intelligence</title>
+    <meta
+        name="theme-color"
+        content="#020617"
+    >
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>TerraWatch | Global Environmental Intelligence</title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="style.css">
+
+    <!-- TERRAWATCH CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
 
+
 <body>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
 
 <header class="navbar">
 
     <div class="logo">
-        🌍 <span>TerraWatch</span>
+        🌍 TerraWatch
     </div>
 
+
     <div class="nav-status">
+
         <span class="status-dot"></span>
-        LIVE MONITORING
+
+        Global Monitoring Active
+
     </div>
 
 </header>
 
 
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
 <main>
 
-    <!-- HERO -->
 
-    <section class="hero">
+<!-- =========================================
+     HERO
+========================================= -->
 
-        <div class="hero-content">
+<section class="hero">
 
-            <div class="eyebrow">
-                GLOBAL ENVIRONMENTAL INTELLIGENCE
+
+    <div class="hero-content">
+
+
+        <span class="eyebrow">
+            GLOBAL ENVIRONMENTAL INTELLIGENCE
+        </span>
+
+
+        <h1>
+
+            Understand
+
+            <span>
+                Our Planet.
+            </span>
+
+            Protect Its Future.
+
+        </h1>
+
+
+        <p>
+
+            TerraWatch transforms environmental
+            information into an interactive planetary
+            intelligence experience — helping you
+            explore climate, oceans, forests,
+            atmospheric conditions and Earth systems.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+            <button
+                class="primary-btn"
+                onclick="scrollToExplorer()"
+            >
+
+                🌍 Explore Earth
+
+            </button>
+
+
+            <button
+                class="secondary-btn"
+                onclick="scrollToMetrics()"
+            >
+
+                📊 View Intelligence
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         3D EARTH
+    ====================================== -->
+
+    <div class="earth-container">
+
+        <div class="orbit orbit-one"></div>
+
+        <div class="orbit orbit-two"></div>
+
+
+        <div
+            class="earth"
+            id="earth"
+            aria-label="Interactive 3D Earth"
+        ></div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     ENVIRONMENTAL INTELLIGENCE
+========================================= -->
+
+<section
+    class="overview"
+    id="intelligence"
+>
+
+
+    <div class="section-heading">
+
+        <span>
+            PLANETARY OVERVIEW
+        </span>
+
+
+        <h2>
+            Earth at a Glance
+        </h2>
+
+
+        <p>
+            Live-style environmental indicators
+            representing major planetary systems.
+        </p>
+
+    </div>
+
+
+
+    <div class="metrics-grid">
+
+
+        <!-- TEMPERATURE -->
+
+        <div class="metric-card">
+
+            <div class="metric-icon">
+                🌡️
             </div>
 
-            <h1>
-                Understand
-                <span>Our Planet.</span>
-                Protect Its Future.
-            </h1>
+            <span>
+                Global Temperature
+            </span>
+
+            <h3>
+                +1.1°C
+            </h3>
+
+            <small>
+                Above pre-industrial levels
+            </small>
+
+        </div>
+
+
+
+        <!-- CO2 -->
+
+        <div class="metric-card">
+
+            <div class="metric-icon">
+                🏭
+            </div>
+
+            <span>
+                Atmospheric CO₂
+            </span>
+
+            <h3>
+                420+ ppm
+            </h3>
+
+            <small>
+                Atmospheric concentration
+            </small>
+
+        </div>
+
+
+
+        <!-- OCEAN -->
+
+        <div class="metric-card">
+
+            <div class="metric-icon">
+                🌊
+            </div>
+
+            <span>
+                Ocean Coverage
+            </span>
+
+            <h3>
+                71%
+            </h3>
+
+            <small>
+                Earth's surface
+            </small>
+
+        </div>
+
+
+
+        <!-- FOREST -->
+
+        <div class="metric-card">
+
+            <div class="metric-icon">
+                🌳
+            </div>
+
+            <span>
+                Forest Coverage
+            </span>
+
+            <h3>
+                31%
+            </h3>
+
+            <small>
+                Global land coverage
+            </small>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     ENVIRONMENTAL EXPLORER
+========================================= -->
+
+<section
+    class="explorer"
+    id="explorer"
+>
+
+
+    <div class="section-heading">
+
+        <span>
+            ENVIRONMENTAL EXPLORER
+        </span>
+
+
+        <h2>
+            Explore Planetary Systems
+        </h2>
+
+
+        <p>
+            Select an environmental domain to
+            explore its intelligence module.
+        </p>
+
+    </div>
+
+
+
+    <div class="explorer-grid">
+
+
+        <!-- CLIMATE -->
+
+        <button
+            class="explorer-card"
+            onclick="openModule('climate')"
+        >
+
+            <span>
+                🌡️
+            </span>
+
+            <h3>
+                Climate
+            </h3>
 
             <p>
-                TerraWatch transforms environmental signals into
-                an interactive planetary intelligence dashboard.
+                Explore global temperature,
+                climate patterns and atmospheric change.
             </p>
 
-            <div class="hero-buttons">
-
-                <button
-                    class="primary-btn"
-                    onclick="scrollToDashboard()"
-                >
-                    🌍 Explore Dashboard
-                </button>
-
-                <button
-                    class="secondary-btn"
-                    onclick="scrollToExplorer()"
-                >
-                    🔎 Explore Systems
-                </button>
-
-            </div>
-
-        </div>
+        </button>
 
 
-        <div class="earth-container">
 
-            <div class="orbit orbit-one"></div>
-            <div class="orbit orbit-two"></div>
+        <!-- OCEANS -->
 
-            <div id="earth" class="earth"></div>
+        <button
+            class="explorer-card"
+            onclick="openModule('oceans')"
+        >
 
-        </div>
+            <span>
+                🌊
+            </span>
 
-    </section>
-
-
-    <!-- DASHBOARD -->
-
-    <section class="dashboard" id="dashboard">
-
-        <div class="section-heading">
-
-            <span>PLANETARY DASHBOARD</span>
-
-            <h2>Environmental Intelligence</h2>
+            <h3>
+                Oceans
+            </h3>
 
             <p>
-                Live-style environmental indicators and planetary signals.
+                Discover ocean conditions,
+                sea-level changes and marine systems.
             </p>
 
-        </div>
+        </button>
 
 
-        <div class="metrics-grid">
 
-            <div class="metric-card">
+        <!-- FORESTS -->
 
-                <div class="metric-top">
-                    <span class="metric-icon">🌡️</span>
-                    <span class="signal">● LIVE</span>
-                </div>
+        <button
+            class="explorer-card"
+            onclick="openModule('forests')"
+        >
 
-                <span class="metric-label">
-                    Global Temperature
-                </span>
+            <span>
+                🌳
+            </span>
 
-                <strong>+1.1°C</strong>
+            <h3>
+                Forests
+            </h3>
 
-                <small>
-                    Above pre-industrial baseline
-                </small>
+            <p>
+                Understand forest coverage,
+                biodiversity and deforestation.
+            </p>
 
-            </div>
-
-
-            <div class="metric-card">
-
-                <div class="metric-top">
-                    <span class="metric-icon">🏭</span>
-                    <span class="signal">● LIVE</span>
-                </div>
-
-                <span class="metric-label">
-                    Atmospheric CO₂
-                </span>
-
-                <strong>420+ ppm</strong>
-
-                <small>
-                    Global atmospheric concentration
-                </small>
-
-            </div>
+        </button>
 
 
-            <div class="metric-card">
 
-                <div class="metric-top">
-                    <span class="metric-icon">🌊</span>
-                    <span class="signal">● LIVE</span>
-                </div>
+        <!-- AIR -->
 
-                <span class="metric-label">
-                    Ocean Coverage
-                </span>
+        <button
+            class="explorer-card"
+            onclick="openModule('air')"
+        >
 
-                <strong>71%</strong>
+            <span>
+                🌬️
+            </span>
 
-                <small>
-                    Earth's surface
-                </small>
+            <h3>
+                Air Quality
+            </h3>
 
-            </div>
+            <p>
+                Explore atmospheric conditions,
+                pollution and air-quality indicators.
+            </p>
 
-
-            <div class="metric-card">
-
-                <div class="metric-top">
-                    <span class="metric-icon">🌳</span>
-                    <span class="signal">● LIVE</span>
-                </div>
-
-                <span class="metric-label">
-                    Forest Coverage
-                </span>
-
-                <strong>31%</strong>
-
-                <small>
-                    Global land area
-                </small>
-
-            </div>
-
-        </div>
+        </button>
 
 
-        <!-- CHARTS -->
 
-        <div class="charts-grid">
+        <!-- BIODIVERSITY -->
 
-            <div class="panel chart-panel">
+        <button
+            class="explorer-card"
+            onclick="openModule('wildlife')"
+        >
 
-                <div class="panel-header">
-                    <div>
-                        <span>CLIMATE SIGNAL</span>
-                        <h3>Temperature Trend</h3>
-                    </div>
+            <span>
+                🐘
+            </span>
 
-                    <div class="chart-value">
-                        +1.1°C
-                    </div>
-                </div>
+            <h3>
+                Biodiversity
+            </h3>
 
-                <canvas id="temperatureChart"></canvas>
+            <p>
+                Explore ecosystems, wildlife
+                and biodiversity indicators.
+            </p>
 
-            </div>
+        </button>
 
-
-            <div class="panel chart-panel">
-
-                <div class="panel-header">
-                    <div>
-                        <span>ATMOSPHERE</span>
-                        <h3>CO₂ Trend</h3>
-                    </div>
-
-                    <div class="chart-value">
-                        420+ ppm
-                    </div>
-                </div>
-
-                <canvas id="co2Chart"></canvas>
-
-            </div>
-
-        </div>
 
 
         <!-- NATURAL EVENTS -->
 
-        <div class="panel events-panel">
+        <button
+            class="explorer-card"
+            onclick="openModule('disasters')"
+        >
 
-            <div class="panel-header">
+            <span>
+                🌋
+            </span>
 
-                <div>
-                    <span>NATURAL EVENTS</span>
-                    <h3>Environmental Event Monitor</h3>
-                </div>
-
-                <div class="event-count">
-                    04 ACTIVE
-                </div>
-
-            </div>
-
-
-            <div class="events-list">
-
-                <div class="event">
-                    <div class="event-icon fire">🔥</div>
-                    <div>
-                        <strong>Wildfire Activity</strong>
-                        <small>Elevated activity detected</small>
-                    </div>
-                    <b>HIGH</b>
-                </div>
-
-                <div class="event">
-                    <div class="event-icon storm">🌪️</div>
-                    <div>
-                        <strong>Storm Systems</strong>
-                        <small>Multiple systems monitored</small>
-                    </div>
-                    <b>MEDIUM</b>
-                </div>
-
-                <div class="event">
-                    <div class="event-icon volcano">🌋</div>
-                    <div>
-                        <strong>Volcanic Activity</strong>
-                        <small>Monitoring active regions</small>
-                    </div>
-                    <b>WATCH</b>
-                </div>
-
-                <div class="event">
-                    <div class="event-icon flood">🌊</div>
-                    <div>
-                        <strong>Flood Risk</strong>
-                        <small>Regional monitoring active</small>
-                    </div>
-                    <b>WATCH</b>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- REGIONS -->
-
-    <section class="regions">
-
-        <div class="section-heading">
-
-            <span>PLANETARY MAP</span>
-
-            <h2>Environmental Regions</h2>
+            <h3>
+                Natural Events
+            </h3>
 
             <p>
-                Explore environmental intelligence across major planetary regions.
+                Track wildfires, storms,
+                floods and volcanic activity.
             </p>
 
-        </div>
+        </button>
 
 
-        <div class="regions-grid">
 
-            <button class="region-card" onclick="selectRegion('North America')">
-                <span>🌎</span>
-                <strong>North America</strong>
-                <small>Climate • Air • Forests</small>
-            </button>
+        <!-- ENERGY -->
 
-            <button class="region-card" onclick="selectRegion('South America')">
-                <span>🌎</span>
-                <strong>South America</strong>
-                <small>Forests • Biodiversity • Climate</small>
-            </button>
+        <button
+            class="explorer-card"
+            onclick="openModule('energy')"
+        >
 
-            <button class="region-card" onclick="selectRegion('Europe')">
-                <span>🌍</span>
-                <strong>Europe</strong>
-                <small>Air • Energy • Climate</small>
-            </button>
+            <span>
+                ⚡
+            </span>
 
-            <button class="region-card" onclick="selectRegion('Africa')">
-                <span>🌍</span>
-                <strong>Africa</strong>
-                <small>Forests • Wildlife • Climate</small>
-            </button>
-
-            <button class="region-card" onclick="selectRegion('Asia')">
-                <span>🌏</span>
-                <strong>Asia</strong>
-                <small>Air • Energy • Oceans</small>
-            </button>
-
-            <button class="region-card" onclick="selectRegion('Oceania')">
-                <span>🌏</span>
-                <strong>Oceania</strong>
-                <small>Oceans • Biodiversity • Climate</small>
-            </button>
-
-        </div>
-
-
-        <div id="regionOutput" class="region-output">
-            Select a region to inspect its environmental systems.
-        </div>
-
-    </section>
-
-
-    <!-- SEARCH / EXPLORER -->
-
-    <section
-        class="explorer"
-        id="explorer"
-    >
-
-        <div class="section-heading">
-
-            <span>ENVIRONMENTAL EXPLORER</span>
-
-            <h2>Explore Planetary Systems</h2>
+            <h3>
+                Energy
+            </h3>
 
             <p>
-                Search an environmental intelligence module.
+                Explore renewable energy,
+                electricity and global energy systems.
             </p>
 
-        </div>
+        </button>
 
 
-        <div class="search-box">
 
-            <span>🔎</span>
+        <!-- EARTH OBSERVATION -->
 
-            <input
-                id="moduleSearch"
-                type="search"
-                placeholder="Search climate, oceans, forests..."
-                autocomplete="off"
-            >
+        <button
+            class="explorer-card"
+            onclick="openModule('satellite')"
+        >
 
-        </div>
+            <span>
+                🛰️
+            </span>
 
+            <h3>
+                Earth Observation
+            </h3>
 
-        <div class="explorer-grid" id="explorerGrid">
+            <p>
+                Understand how satellites monitor
+                our planet from space.
+            </p>
 
-            <button
-                class="explorer-card"
-                data-search="climate temperature atmosphere"
-                onclick="openModule('climate')"
-            >
-                <span>🌡️</span>
-                <h3>Climate</h3>
-                <p>
-                    Temperature, climate patterns and atmospheric change.
-                </p>
-            </button>
+        </button>
 
 
-            <button
-                class="explorer-card"
-                data-search="oceans sea water marine"
-                onclick="openModule('oceans')"
-            >
-                <span>🌊</span>
-                <h3>Oceans</h3>
-                <p>
-                    Ocean conditions, sea levels and marine systems.
-                </p>
-            </button>
+    </div>
 
 
-            <button
-                class="explorer-card"
-                data-search="forests trees deforestation"
-                onclick="openModule('forests')"
-            >
-                <span>🌳</span>
-                <h3>Forests</h3>
-                <p>
-                    Forest coverage, ecosystems and deforestation.
-                </p>
-            </button>
+</section>
 
 
-            <button
-                class="explorer-card"
-                data-search="air pollution atmosphere quality"
-                onclick="openModule('air')"
-            >
-                <span>🌬️</span>
-                <h3>Air Quality</h3>
-                <p>
-                    Atmospheric conditions and pollution indicators.
-                </p>
-            </button>
+
+<!-- =========================================
+     ENVIRONMENTAL REGIONS
+========================================= -->
+
+<section
+    class="regions"
+    id="regions"
+>
 
 
-            <button
-                class="explorer-card"
-                data-search="biodiversity wildlife animals ecosystems"
-                onclick="openModule('wildlife')"
-            >
-                <span>🐘</span>
-                <h3>Biodiversity</h3>
-                <p>
-                    Wildlife, ecosystems and biodiversity systems.
-                </p>
-            </button>
+    <div class="section-heading">
+
+        <span>
+            PLANETARY REGIONS
+        </span>
 
 
-            <button
-                class="explorer-card"
-                data-search="natural events disasters wildfire storm volcano"
-                onclick="openModule('disasters')"
-            >
-                <span>🔥</span>
-                <h3>Natural Events</h3>
-                <p>
-                    Wildfires, storms, floods and volcanic activity.
-                </p>
-            </button>
+        <h2>
+            Explore Environmental Regions
+        </h2>
 
 
-            <button
-                class="explorer-card"
-                data-search="energy renewable electricity solar"
-                onclick="openModule('energy')"
-            >
-                <span>⚡</span>
-                <h3>Energy</h3>
-                <p>
-                    Renewable energy and global energy systems.
-                </p>
-            </button>
+        <p>
+            Select a region to explore its
+            environmental intelligence.
+        </p>
+
+    </div>
 
 
-            <button
-                class="explorer-card"
-                data-search="satellite observation space earth"
-                onclick="openModule('satellite')"
-            >
-                <span>🛰️</span>
-                <h3>Earth Observation</h3>
-                <p>
-                    Satellite-based monitoring of Earth's systems.
-                </p>
-            </button>
 
-        </div>
+    <div class="regions-grid">
 
-    </section>
+
+        <!-- NORTH AMERICA -->
+
+        <button class="region-card">
+
+            <span>
+                🌎
+            </span>
+
+            <h3>
+                North America
+            </h3>
+
+            <p>
+                Climate • Air • Forests
+            </p>
+
+        </button>
+
+
+
+        <!-- SOUTH AMERICA -->
+
+        <button class="region-card">
+
+            <span>
+                🌎
+            </span>
+
+            <h3>
+                South America
+            </h3>
+
+            <p>
+                Rainforests • Biodiversity • Water
+            </p>
+
+        </button>
+
+
+
+        <!-- EUROPE -->
+
+        <button class="region-card">
+
+            <span>
+                🌍
+            </span>
+
+            <h3>
+                Europe
+            </h3>
+
+            <p>
+                Climate • Energy • Air Quality
+            </p>
+
+        </button>
+
+
+
+        <!-- ASIA -->
+
+        <button class="region-card">
+
+            <span>
+                🌏
+            </span>
+
+            <h3>
+                Asia
+            </h3>
+
+            <p>
+                Climate • Cities • Ecosystems
+            </p>
+
+        </button>
+
+
+
+        <!-- AFRICA -->
+
+        <button class="region-card">
+
+            <span>
+                🌍
+            </span>
+
+            <h3>
+                Africa
+            </h3>
+
+            <p>
+                Wildlife • Water • Climate
+            </p>
+
+        </button>
+
+
+
+        <!-- OCEANIA -->
+
+        <button class="region-card">
+
+            <span>
+                🌏
+            </span>
+
+            <h3>
+                Oceania
+            </h3>
+
+            <p>
+                Oceans • Coral • Biodiversity
+            </p>
+
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
 
 </main>
 
 
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
 <footer>
 
-    <div>
-        🌍 <strong>TerraWatch</strong>
-        — Global Environmental Intelligence
-    </div>
 
     <div>
-        V2 • Built for planetary exploration
+
+        🌍
+
+        <strong>
+            TerraWatch
+        </strong>
+
+        — Global Environmental Intelligence
+
     </div>
+
+
+    <div>
+
+        Built for exploration • 2026
+
+    </div>
+
 
 </footer>
 
 
-<!-- THREE.JS -->
+
+<!-- =========================================
+     THREE.JS
+========================================= -->
 
 <script
     src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"
 ></script>
 
-<script src="script.js"></script>
+
+
+<!-- =========================================
+     TERRAWATCH JAVASCRIPT
+========================================= -->
+
+<script
+    src="script.js"
+></script>
+
 
 </body>
+
 </html>
