@@ -14,11 +14,11 @@
 
 <br>
 
-<a href="https://pilottek79.github.io/">
+<a href="https://pilotek79.github.io/">
   <img src="https://img.shields.io/badge/🌍%20LIVE%20DEMO-34D399?style=for-the-badge&logoColor=black" alt="Live Demo">
 </a>
 
-<a href="https://github.com/pilottek79/-TERRAWATCH-Global-Environmental-Intelligence">
+<a href="https://github.com/pilotek79/-TERRAWATCH-Global-Environmental-Intelligence">
   <img src="https://img.shields.io/badge/💻%20SOURCE%20CODE-020617?style=for-the-badge&logo=github&logoColor=white" alt="Source Code">
 </a>
 
