@@ -1223,3 +1223,46 @@ footer strong {
     }
 
 }
+
+/* =========================================
+   FIX — PLANETARY OVERVIEW ALIGNMENT
+========================================= */
+
+.overview {
+    width: 86% !important;
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.overview .section-heading {
+    width: 100%;
+}
+
+.overview .metrics-grid {
+    width: 100%;
+}
+
+
+/* TABLET / IPAD */
+
+@media (max-width: 1100px) {
+
+    .overview {
+        width: 88% !important;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+    .overview {
+        width: 90% !important;
+    }
+
+}
