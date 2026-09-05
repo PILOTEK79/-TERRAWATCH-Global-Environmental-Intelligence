@@ -20,7 +20,7 @@
 <img src="https://img.shields.io/badge/🌍%20LIVE%20DEMO-34D399?style=for-the-badge&labelColor=020617" alt="Live Demo">
 </a>
 
-<a href="https://github.com/pilottek79/-TERRAWATCH-Global-Environmental-Intelligence">
+<a href="https://pilotek79.github.io/-TERRAWATCH-Global-Environmental-Intelligence/">
 <img src="https://img.shields.io/badge/💻%20SOURCE%20CODE-22D3EE?style=for-the-badge&labelColor=020617" alt="Source Code">
 </a>
 
